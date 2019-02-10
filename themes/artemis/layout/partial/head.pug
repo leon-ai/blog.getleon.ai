@@ -9,6 +9,15 @@ block description
     meta(name='description', content=config.description ? config.description : __('meta_description'))
 
 meta(name='viewport', content='width=device-width, initial-scale=1')
+meta(name='theme-color', content=config.theme_color)
+meta(name='og:type', content=config.og_type)
+meta(name='og:title', content=config.og_title)
+meta(name='og:description', content=config.og_description)
+meta(name='og:image', content=config.og_image)
+meta(name='twitter:card', content=config.twitter_card)
+meta(name='twitter:title', content=config.og_title)
+meta(name='twitter:description', content=config.og_description)
+meta(name='twitter:image', content=config.og_image)
 
 link(rel='icon', href=url_for(theme.favicon))
 link(rel='stylesheet', href=url_for('css/theme.css'))

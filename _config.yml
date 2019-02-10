@@ -5,11 +5,17 @@
 # Site
 title: Leon Blog
 subtitle: Read the latest news from Leon
-description: Leon Blog - Stay Updated About Your Open-Source Personal Assistant.
+description: Leon Blog - Read The Latest News From Your Open-Source Personal Assistant.
 keywords:
 author: Louis Grenard
 language: en
 timezone:
+theme_color: '#1C75DB'
+og_type: website
+og_title: Leon Blog
+og_description: Leon Blog - Read The Latest News From Your Open-Source Personal Assistant.
+og_image: https://getleon.ai/img/logo_t.png
+twitter_card: summary
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
