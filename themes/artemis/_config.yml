@@ -1,0 +1,26 @@
+name: Artemis
+url: https://github.com/Dreyer/hexo-theme-artemis
+
+menu:
+  Home: /
+  Archives: /archives
+  Website: https://getleon.ai
+  GitHub: https://github.com/leon-ai/leon
+  RSS: /atom.xml
+
+favicon: /favicon.png
+logo: /logo.svg
+
+# Comment
+# e.g disqus: seansun
+disqus:
+
+# Analytics
+mathjax: false
+google_analytics:
+
+# Copyright Information
+copyright:
+  since:
+  name:
+  url:
