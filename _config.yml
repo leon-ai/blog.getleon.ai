@@ -5,7 +5,7 @@
 # Site
 title: Leon Blog
 subtitle: Read the latest news from Leon
-description: Leon Blog - Read The Latest News From Your Open-Source Personal Assistant.
+description: Read the latest news from your open-source personal assistant Leon.
 keywords:
 author: Louis Grenard
 language: en
@@ -13,7 +13,7 @@ timezone:
 theme_color: '#1C75DB'
 og_type: website
 og_title: Leon Blog
-og_description: Leon Blog - Read The Latest News From Your Open-Source Personal Assistant.
+og_description: Read the latest news from your open-source personal assistant Leon.
 og_image: https://getleon.ai/img/logo_t.png
 twitter_card: summary
 
