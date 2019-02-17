@@ -79,6 +79,7 @@ Here are some numbers from the initial release:
 3. **4 days later** *—* Leon has more than 400 GitHub stars.
 4. **5 days later** *—* Someone published Leon on the well known Hacker News and it has been well received. That brings Leon on the front page, to the 3rd position for few hours, then the 10th position for a complete day.
 5. **6 days later** *—* The Leon's repository is ranked at the 1st position of the main GitHub trending page.
+6. **7 days later (today)** *—* Leon has more than 1.7k stars.
 
 ![Leon on GitHub trending](/images/20190217/leon_gh_trending.png)
 
