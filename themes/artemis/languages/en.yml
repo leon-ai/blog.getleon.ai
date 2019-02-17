@@ -2,7 +2,7 @@ prev: prev
 next: next
 prev_post: prev
 next_post: next
-read_more: '&hellip; more'
+read_more: 'Read more&hellip;'
 untitled: (untitled)
 translate_original: Translate the original address
 meta_description: A Blog Powered By Hexo

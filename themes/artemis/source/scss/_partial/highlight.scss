@@ -1,7 +1,7 @@
 code,
 pre {
     font-size: 0.8em;
-    background-color: #f8f8f8;
+    background-color: #0F111A;
     font-family: 'Roboto Mono', Monaco, courier, monospace;
 }
 
@@ -10,7 +10,7 @@ pre {
     margin: 1em 0;
     border-radius: 2px;
     line-height: 1.1em;
-    background-color: #f8f8f8;
+    background-color: #0F111A;
     overflow-x: auto;
     table, tr, td {
         width: 100%;
@@ -62,7 +62,7 @@ $signs: ("sql", "ini", "conf", "html", "javascript", "js", "bash", "css", "scss"
 }
 
 pre {
-    color: #525252;
+    color: #A5A7BD;
 
     .comment,
     .quote {
