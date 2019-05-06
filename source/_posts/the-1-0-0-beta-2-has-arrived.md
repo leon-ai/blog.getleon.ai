@@ -79,7 +79,7 @@ Cheers 🍻,
 
 ## Spread The Word & Stay Tuned
 
-👉 Share this [blog post](https://twitter.com/intent/tweet?source=webclient&original_referer=https://blog.getleon.ai/the-story-behind-leon&text=The Story Behind Leon&url=https://blog.getleon.ai/the-story-behind-leon&via=louistiti_fr).
+👉 Share this [blog post](https://twitter.com/intent/tweet?source=webclient&original_referer=https://blog.getleon.ai/the-1-0-0-beta-2-has-arrived&text=The 1.0.0-beta.2 Has Arrived&url=https://blog.getleon.ai/the-1-0-0-beta-2-has-arrived&via=louistiti_fr).
 
 👉 Follow me [@louistiti_fr](https://twitter.com/louistiti_fr).
 
