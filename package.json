@@ -1,14 +1,24 @@
 {
-  "name": "my-gatsby-site",
-  "version": "1.0.0",
+  "name": "blog.getleon.ai",
+  "version": "2.0.0",
   "private": true,
-  "description": "My Gatsby Site",
-  "author": "louistiti",
-  "keywords": [
-    "gatsby"
-  ],
+  "description": "Blog of the Leon personal assistant",
+  "author": {
+    "name": "Louis Grenard",
+    "email": "louis.grenard@gmail.com",
+    "url": "https://twitter.com/louistiti_fr"
+  },
+  "license": "MIT",
+  "homepage": "https://blog.getleon.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leon-ai/blog.getleon.ai.git"
+  },
+  "bugs": {
+    "url": "https://github.com/leon-ai/blog.getleon.ai/issues"
+  },
   "scripts": {
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
