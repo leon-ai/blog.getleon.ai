@@ -5,15 +5,14 @@ module.exports = {
       name: 'Kyle Mathews',
       summary: 'who lives and works in San Francisco building useful things.'
     },
-    description: 'A starter blog demonstrating what Gatsby can do.',
-    siteUrl: 'https://gatsbystarterblogsource.gatsbyjs.io/',
-    social: {
-      twitter: 'kylemathews'
-    }
+    description: 'Read the latest news from your open-source personal assistant Leon.',
+    siteUrl: 'https://blog.getleon.ai'
   },
   plugins: [
     'gatsby-plugin-image',
     'gatsby-plugin-sass',
+    'gatsby-plugin-dark-mode',
+    'gatsby-plugin-twitter',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -113,11 +112,11 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Gatsby Starter Blog',
-        short_name: 'GatsbyJS',
+        name: 'Leon Blog',
+        short_name: 'LeonBlog',
         start_url: '/',
-        background_color: '#ffffff',
-        theme_color: '#663399',
+        background_color: '#000000',
+        theme_color: '#1C75DB',
         display: 'minimal-ui',
         icon: 'src/images/gatsby-icon.png' // This path is relative to the root of the site.
       }

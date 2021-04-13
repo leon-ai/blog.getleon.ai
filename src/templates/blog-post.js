@@ -3,18 +3,23 @@ import { Link, graphql } from 'gatsby'
 
 import Bio from '../components/bio'
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteTitle = data.site.siteMetadata?.title || 'Title'
   const { previous, next } = data
+
+  console.log(post)
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO
+      <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        ogType="article"
+        ogImage={post.frontmatter.ogImage}
+        twitterImage={post.frontmatter.twitterImage}
       />
       <article
         className="blog-post"
@@ -37,11 +42,11 @@ const BlogPostTemplate = ({ data, location }) => {
       <nav className="blog-post-nav">
         <ul
           style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'space-between',
+            listStyle: 'none',
+            padding: 0
           }}
         >
           <li>
@@ -85,6 +90,8 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        ogImage
+        twitterImage
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
