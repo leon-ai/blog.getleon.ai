@@ -44,17 +44,20 @@
   /* 1.200 Minor Third Type Scale */
   --fontSize-0: 0.833rem
   --fontSize-1: 1rem
-  --fontSize-2: 1.2rem
+  --fontSize-2: 1.1rem
   --fontSize-3: 1.44rem
   --fontSize-4: 1.728rem
   --fontSize-5: 2.074rem
-  --fontSize-6: 2.488rem
-  --fontSize-7: 2.986rem
-  --color-primary: #005b99
+  --fontSize-6: 2.8rem
+  --fontSize-7: 3rem
+  --color-black: #000
+  --color-white: #F5F5F7
+  --color-gray: #B9BACD
+  --color-primary: #1C75DB
   --color-text: #2e353f
   --color-text-light: #4f5969
   --color-heading: #1a202c
-  --color-heading-black: black
+  --color-heading-black: var(--color-black)
   --color-accent: #d1dce5
 
 
@@ -73,18 +76,25 @@ html
   -moz-osx-font-smoothing: grayscale
 
 
-body 
-  font-family: var(--font-body)
-  font-size: var(--fontSize-1)
-  color: var(--color-text)
+body
+  --background-color: var(--color-black)
+  --main-text-color: var(--color-gray)
 
+  font-family: var(--font-body)
+  font-size: var(--fontSize-2)
+  color: var(--main-text-color)
+  background-color: var(--background-color)
+
+  &.light
+    --background-color: var(--color-white)
+    --main-text-color: var(--color-black)
 
 footer 
   padding: var(--spacing-6) var(--spacing-0)
 
 
 hr 
-  background: var(--color-accent)
+  background: var(--color-text-light)
   height: 1px
   border: 0
 
@@ -109,14 +119,26 @@ h3,
 h4,
 h5,
 h6 
-  font-weight: var(--fontWeight-bold)
-  color: var(--color-heading)
-
+  font-weight: var(--fontWeight-black)
+  color: var(--color-white)
 
 h1 
   font-weight: var(--fontWeight-black)
   font-size: var(--fontSize-6)
-  color: var(--color-heading-black)
+  color: var(--color-white)
+
+.light
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+    color: var(--color-black)
+
+  hr
+    background: var(--color-accent)
+
 
 
 h2 
@@ -138,8 +160,7 @@ h5
 h6 
   font-size: var(--fontSize-1)
 
-
-h1 > a 
+h1 > a
   color: inherit
   text-decoration: none
 
@@ -225,7 +246,8 @@ table thead tr th
 
 /* Link */
 
-a 
+a
+  text-decoration: none
   color: var(--color-primary)
 
 
@@ -233,8 +255,17 @@ a:hover,
 a:focus 
   text-decoration: none
 
+a.anchor
+  fill: var(--color-primary)
+
 
 /* Custom classes */
+
+article
+  color: var(--main-text-color)
+
+.post-data
+  color: var(--color-text-light)
 
 .global-wrapper 
   margin: var(--spacing-0) auto
@@ -249,9 +280,16 @@ a:focus
 .global-header 
   margin-bottom: var(--spacing-12)
 
+.logo-headline
+  display: flex
+  align-items: center
+
+  h1
+    margin-left: 8px
 
 .main-heading 
   font-size: var(--fontSize-7)
+  font-weight: 700
   margin: 0
 
 
@@ -294,8 +332,8 @@ a:focus
 .bio-avatar 
   margin-right: var(--spacing-4)
   margin-bottom: var(--spacing-0)
-  min-width: 50px
-  border-radius: 100%
+  min-width: 56px
+  border-radius: 50%
 
 
 .blog-post header h1 
@@ -309,6 +347,9 @@ a:focus
 
 .blog-post-nav ul 
   margin: var(--spacing-0)
+
+.blog-post section
+  margin-top: var(--spacing-8)
 
 
 .gatsby-highlight 

@@ -1,16 +1,14 @@
 import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 
-import Bio from '../components/bio'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
+
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || 'Title'
   const { previous, next } = data
-
-  console.log(post)
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -28,16 +26,18 @@ const BlogPostTemplate = ({ data, location }) => {
       >
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
+          <p className="post-data">
+            {post.frontmatter.date}
+            <br />
+            {post.frontmatter.author}
+          </p>
         </header>
+        <hr />
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
-        <hr />
-        <footer>
-          <Bio />
-        </footer>
+        NEWSLETTER
       </article>
       <nav className="blog-post-nav">
         <ul
@@ -89,6 +89,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        author
         description
         ogImage
         twitterImage

@@ -51,6 +51,7 @@ module.exports = {
               wrapperStyle: 'margin-bottom: 1.0725rem'
             }
           },
+          'gatsby-remark-autolink-headers',
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants'
@@ -126,7 +127,7 @@ module.exports = {
         background_color: '#000000',
         theme_color: '#1C75DB',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png' // This path is relative to the root of the site.
+        icon: 'src/images/logo.svg' // This path is relative to the root of the site.
       }
     },
     'gatsby-plugin-react-helmet',
