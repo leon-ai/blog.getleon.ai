@@ -1,3 +1,5 @@
+const siteUrl = process.env.NODE_ENV === 'production' ? 'https://blog.getleon.ai' : 'http://localhost:8000'
+
 module.exports = {
   siteMetadata: {
     title: 'Leon Blog',
@@ -6,13 +8,19 @@ module.exports = {
       summary: 'who lives and works in San Francisco building useful things.'
     },
     description: 'Read the latest news from your open-source personal assistant Leon.',
-    siteUrl: 'https://blog.getleon.ai'
+    siteUrl
   },
   plugins: [
     'gatsby-plugin-image',
     'gatsby-plugin-sass',
     'gatsby-plugin-dark-mode',
     'gatsby-plugin-twitter',
+    {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl
+      }
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
