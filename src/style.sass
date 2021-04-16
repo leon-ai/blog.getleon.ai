@@ -54,8 +54,9 @@
   --color-white: #F5F5F7
   --color-gray: #B9BACD
   --color-primary: #1C75DB
-  --color-text: #2e353f
-  --color-text-light: #4f5969
+  --color-secondary: #ED297A
+  --color-border: #3f4554
+  --color-text-light: #747d91
   --color-heading: #1a202c
   --color-heading-black: var(--color-black)
   --color-accent: #d1dce5
@@ -84,17 +85,19 @@ body
   font-size: var(--fontSize-2)
   color: var(--main-text-color)
   background-color: var(--background-color)
+  transition: background-color .2s
 
   &.light
     --background-color: var(--color-white)
     --main-text-color: var(--color-black)
+    --color-border: var(--color-gray)
 
 footer 
   padding: var(--spacing-6) var(--spacing-0)
 
 
 hr 
-  background: var(--color-text-light)
+  background: var(--color-border)
   height: 1px
   border: 0
 
@@ -249,17 +252,25 @@ table thead tr th
 a
   text-decoration: none
   color: var(--color-primary)
+  transition: .2s color
 
 
 a:hover,
 a:focus 
   text-decoration: none
+  color: var(--color-secondary)
 
 a.anchor
   fill: var(--color-primary)
 
 
 /* Custom classes */
+
+main a h2
+  transition: .2s color
+main a:hover
+  h2
+    color: var(--color-secondary)
 
 article
   color: var(--main-text-color)
@@ -345,8 +356,27 @@ article
   font-family: var(--font-heading)
 
 
-.blog-post-nav ul 
+.blog-post-nav ul
+  display: flex
   margin: var(--spacing-0)
+
+  li
+    border: 1px solid var(--color-border)
+    border-radius: 4px
+    flex: 1
+    transition: .2s border-color
+    &:hover
+      border-color: var(--color-secondary)
+      a
+        color: var(--color-secondary)
+    &:last-child
+      text-align: right
+      margin-left: 16px
+    span
+      color: var(--main-text-color)
+    a
+      padding: 8px 16px
+      display: block
 
 .blog-post section
   margin-top: var(--spacing-8)

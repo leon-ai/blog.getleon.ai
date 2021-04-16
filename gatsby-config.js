@@ -3,10 +3,6 @@ const siteUrl = process.env.NODE_ENV === 'production' ? 'https://blog.getleon.ai
 module.exports = {
   siteMetadata: {
     title: 'Leon Blog',
-    author: {
-      name: 'Kyle Mathews',
-      summary: 'who lives and works in San Francisco building useful things.'
-    },
     description: 'Read the latest news from your open-source personal assistant Leon.',
     siteUrl
   },
@@ -134,6 +130,6 @@ module.exports = {
     'gatsby-plugin-gatsby-cloud',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // 'gatsby-plugin-offline',
+    'gatsby-plugin-offline'
   ]
 }

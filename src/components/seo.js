@@ -71,6 +71,14 @@ const Seo = ({ description, lang, meta, title, twitterImage,
         {
           name: 'twitter:image',
           content: twitterImage || 'DEFAULT TWITTER IMAGE'
+        },
+        {
+          name: 'twitter:dnt',
+          content: 'on'
+        },
+        {
+          name: 'twitter:creator',
+          content: '@louistiti_fr'
         }
       ].concat(meta)}
     />
