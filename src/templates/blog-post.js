@@ -45,7 +45,7 @@ const BlogPostTemplate = ({ data, location }) => {
             listStyle: 'none'
           }}
         >
-          <li>
+          <li className={`${previous ? '' : 'nav-empty'}`}>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
                 <span>Previous</span>
@@ -56,7 +56,7 @@ const BlogPostTemplate = ({ data, location }) => {
               </Link>
             )}
           </li>
-          <li>
+          <li className={`${next ? '' : 'nav-empty'}`}>
             {next && (
               <Link to={next.fields.slug} rel="next">
                 <span>Next</span>
