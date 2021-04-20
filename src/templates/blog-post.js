@@ -14,6 +14,7 @@ const BlogPostTemplate = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <Seo
         title={post.frontmatter.title}
+        titleTemplate={`%s | ${siteTitle}`}
         description={post.frontmatter.description || post.excerpt}
         ogType="article"
         ogImage={post.frontmatter.ogImage}

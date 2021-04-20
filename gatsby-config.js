@@ -3,7 +3,7 @@ const siteUrl = process.env.NODE_ENV === 'production' ? 'https://blog.getleon.ai
 module.exports = {
   siteMetadata: {
     title: 'Leon Blog',
-    description: 'Read the latest news from your open-source personal assistant Leon.',
+    description: 'Read the latest news from Leon, your open-source personal assistant.',
     siteUrl
   },
   plugins: [

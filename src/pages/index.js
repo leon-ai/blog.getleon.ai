@@ -12,12 +12,10 @@ const BlogIndex = ({ data, location }) => {
     return (
       <Layout location={location} title={siteTitle}>
         <Seo
-          title="All posts"
+          title="News from your Open-Source Personal Assistant"
         />
         <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
+          No blog post found.
         </p>
       </Layout>
     )
@@ -26,7 +24,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo
-        title="All posts"
+        title="News from your Open-Source Personal Assistant"
       />
       <p>
         The latest news from Leon, your open-source personal assistant.
