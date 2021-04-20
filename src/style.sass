@@ -85,7 +85,7 @@ body
   font-size: var(--fontSize-2)
   color: var(--main-text-color)
   background-color: var(--background-color)
-  transition: background-color .2s
+  transition: background-color .3s
 
   &.light
     --background-color: var(--color-white)
@@ -252,13 +252,19 @@ table thead tr th
 a
   text-decoration: none
   color: var(--color-primary)
-  transition: .2s color
+  transition: .3s color
 
 
 a:hover,
 a:focus 
-  text-decoration: none
   color: var(--color-secondary)
+
+  h2
+    text-decoration: underline
+
+.blog-post
+  a:hover, a:focus
+    text-decoration: underline
 
 a.anchor
   fill: var(--color-primary)
@@ -267,7 +273,7 @@ a.anchor
 /* Custom classes */
 
 main a h2
-  transition: .2s color
+  transition: .3s color
 main a:hover
   h2
     color: var(--color-secondary)
@@ -364,7 +370,7 @@ article
     border: 1px solid var(--color-border)
     border-radius: 4px
     flex: 1
-    transition: .2s border-color
+    transition: .3s border-color
     &.nav-empty
       border: none
 
