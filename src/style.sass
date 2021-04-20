@@ -262,7 +262,7 @@ a:focus
   h2
     text-decoration: underline
 
-.blog-post
+.blog-post, .global-footer
   a:hover, a:focus
     text-decoration: underline
 
@@ -296,6 +296,20 @@ article
 
 .global-header 
   margin-bottom: var(--spacing-12)
+
+.global-footer
+  display: flex
+  justify-content: space-between
+
+.global-footer li
+  display: inline
+
+  &:first-child::before
+    content: none
+  &:last-child
+    text-align: right
+  &::before
+    content: ' • '
 
 .logo-headline
   display: flex
@@ -381,7 +395,7 @@ article
     &:last-child
       text-align: right
       margin-left: 16px
-    span
+    small
       color: var(--main-text-color)
     a
       padding: 8px 16px

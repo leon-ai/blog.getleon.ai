@@ -48,8 +48,15 @@ const Layout = ({ location, title, children }) => {
         </ThemeToggler>
       </header>
       <main>{children}</main>
-      <footer>
-        getleon.ai - github - twitter - rss
+      <footer className="global-footer">
+        <ul>
+          <li><a href="https://twitter.com/louistiti_fr" rel="noreferrer" target="_blank">twitter</a></li>
+          <li><a href="https://github.com/leon-ai/leon" rel="noreferrer" target="_blank">github</a></li>
+          <li><a href="https://getleon.ai" rel="noreferrer" target="_blank">getleon.ai</a></li>
+        </ul>
+        <ul>
+          <li><a href="/rss.xml">rss</a></li>
+        </ul>
       </footer>
     </div>
   )
