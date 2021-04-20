@@ -1,6 +1,10 @@
 ---
 title: My Second Post!
-date: "2015-05-06T23:46:37.121Z"
+date: 2021-04-12
+author: Louis Grenard
+description: Desc test.
+ogImage: OG image test
+twitterImage: Twitter image test
 ---
 
 Wow! I love blogging so much already.

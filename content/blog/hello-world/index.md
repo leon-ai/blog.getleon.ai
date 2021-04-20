@@ -1,7 +1,10 @@
 ---
 title: Hello World
-date: "2015-05-01T22:12:03.284Z"
-description: "Hello World"
+date: 2021-04-12
+author: Louis Grenard
+description: Desc test.
+ogImage: OG image test
+twitterImage: Twitter image test
 ---
 
 This is my first post on my new fake blog! How exciting!

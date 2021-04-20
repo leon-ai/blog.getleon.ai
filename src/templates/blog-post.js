@@ -9,6 +9,7 @@ const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || 'Title'
   const { previous, next } = data
+  const authorImg = require(`../images/authors/${post.frontmatter.author.toLowerCase().replaceAll(' ', '_')}.png`).default
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -28,9 +29,7 @@ const BlogPostTemplate = ({ data, location }) => {
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p className="post-data">
-            {post.frontmatter.date}
-            <br />
-            {post.frontmatter.author}
+            <img src={authorImg} alt={post.frontmatter.author} /> {post.frontmatter.author} / {post.frontmatter.date}
           </p>
         </header>
         <hr />

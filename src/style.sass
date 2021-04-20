@@ -282,7 +282,14 @@ article
   color: var(--main-text-color)
 
 .post-data
+  display: flex
+  align-items: center
+  font-size: .9em
   color: var(--color-text-light)
+  img
+    border-radius: 50%
+    width: 24px
+    margin-right: 8px
 
 .global-wrapper 
   margin: var(--spacing-0) auto
@@ -327,6 +334,8 @@ article
 .post-list-item 
   margin-bottom: var(--spacing-8)
   margin-top: var(--spacing-8)
+  small
+    color: var(--color-text-light)
 
 
 .post-list-item p 
@@ -340,8 +349,10 @@ article
   margin-top: var(--spacing-0)
 
 
-.post-list-item header 
-  margin-bottom: var(--spacing-4)
+.post-list-item header
+  display: flex
+  justify-content: space-between
+  align-items: center
 
 
 .header-link-home 
@@ -369,11 +380,6 @@ article
 
 .blog-post header h1 
   margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0)
-
-
-.blog-post header p 
-  font-size: var(--fontSize-2)
-  font-family: var(--font-heading)
 
 
 .blog-post-nav ul
