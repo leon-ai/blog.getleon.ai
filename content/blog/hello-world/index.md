@@ -11,6 +11,35 @@ This is my first post on my new fake blog! How exciting!
 
 I'm sure I'll write a lot more interesting things in the future.
 
+Just a `code here`.
+
+```js
+const foo = 'bar'
+```
+
+```php
+$foo = 'bar';
+```
+
+```shell
+cd ..
+cp -f dir new_dir
+```
+
+```html
+<div class="test">
+  <p id="para">
+    Hello world
+  </p>
+</div>
+```
+
+```sass
+.test
+  color: red
+  background-color: #000
+```
+
 Oh, and here's a great quote from this Wikipedia on
 [salted duck eggs](https://en.wikipedia.org/wiki/Salted_duck_egg).
 

@@ -25,6 +25,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@fontsource/jetbrains-mono": "^4.2.2",
     "@fontsource/source-sans-pro": "^4.2.2",
     "gatsby": "^3.2.1",
     "gatsby-plugin-canonical-urls": "^3.3.0",

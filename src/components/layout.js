@@ -15,7 +15,7 @@ const Layout = ({ location, title, children }) => {
         <img
           src={logo}
           alt="Logo"
-          width={60}
+          width={54}
         />
         <h1 className="main-heading">
           {title}
