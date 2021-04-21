@@ -36,14 +36,13 @@ const Layout = ({ location, title, children }) => {
         {header}
         <ThemeToggler>
           {({ theme, toggleTheme }) => (
-            <label>
-              <input
-                type="checkbox"
-                onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
-                checked={theme === 'dark'}
-              />{' '}
-              Dark mode
-            </label>
+            <button
+              type="button"
+              className="theme-toggler"
+              onClick={() => toggleTheme(theme === 'dark' ? 'light' : 'dark')}
+            >
+              {theme === 'dark' ? '☀' : '🌙'}
+            </button>
           )}
         </ThemeToggler>
       </header>

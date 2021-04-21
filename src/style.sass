@@ -276,6 +276,16 @@ a.anchor
 
 /* Custom classes */
 
+.theme-toggler
+  cursor: pointer
+  background: none
+  border: none
+  color: transparent
+  text-shadow: 0 0 0 var(--color-white)
+
+.light .theme-toggler
+  text-shadow: 0 0 0 var(--color-black)
+
 main a h2
   transition: .3s color
 main a:hover
@@ -305,7 +315,10 @@ article
   margin-bottom: var(--spacing-20)
 
 
-.global-header 
+.global-header
+  display: flex
+  justify-content: space-between
+  align-items: center
   margin-bottom: var(--spacing-12)
 
 .global-footer
