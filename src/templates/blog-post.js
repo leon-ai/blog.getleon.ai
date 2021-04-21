@@ -37,7 +37,31 @@ const BlogPostTemplate = ({ data, location }) => {
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
-        NEWSLETTER
+        <div className="newsletter-container">
+          <div className="newsletter-info">
+            <h2>
+              Join the Journey
+            </h2>
+            <p>
+              Subscribe to the newsletter to get the latest news by email.
+            </p>
+            <p>
+              <em>
+                No spam. Unsubscribe at any time.
+              </em>
+            </p>
+            <img src="https://img.icons8.com/color/452/love-letter--v1.png" width={56} alt=""/>
+          </div>
+          <div className="newsletter-form-container">
+            <form action="https://www.getrevue.co/profile/leon/add_subscriber" method="post" target="_blank">
+              <input type="email" required spellCheck="false" placeholder="john.doe@example.com" name="member[email]" />
+              <button type="submit" name="member[subscribe]">Stay updated</button>
+            </form>
+          </div>
+        </div>
+        <br />
+        <p>Cheers 🍹,</p>
+        <p><em>{post.frontmatter.author.split(' ')[0]}</em>.</p>
       </article>
       <nav className="blog-post-nav">
         <ul

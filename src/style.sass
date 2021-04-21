@@ -427,9 +427,63 @@ article
 .blog-post section
   margin-top: var(--spacing-8)
 
+.blog-post
+  ul, ol
+    margin-left: 40px
+
 
 .gatsby-highlight
   margin-bottom: var(--spacing-8)
+
+.newsletter-container
+  display: flex
+  justify-content: space-around
+  color: var(--color-white)
+  border-radius: .3em
+  .newsletter-info
+    display: flex
+    flex-direction: column
+    background-color: var(--color-heading)
+    padding: 20px
+    border-radius: .3em 0 0 .3em
+  h2
+    color: var(--color-white)
+    margin: 0
+    margin-bottom: 12px
+  p
+    margin: 0
+    margin-bottom: 12px
+  img
+    align-self: center
+  .newsletter-form-container
+    display: flex
+    justify-content: center
+    flex-direction: column
+    background-color: var(--color-primary)
+    padding: 20px
+    border-radius: 0 .3em .3em 0
+    form
+      display: flex
+      flex-direction: column
+    input
+      border-radius: .3em
+      border: none
+      background-color: var(--color-white)
+      padding: 12px
+      margin-bottom: 12px
+    button
+      width: auto
+      cursor: pointer
+      font-weight: var(--fontWeight-semibold)
+      background-color: var(--color-heading)
+      border-radius: .3em
+      border: none
+      color: var(--color-white)
+      display: inline-block
+      padding: 12px
+      transition: .3s background-color
+      &:hover
+        background-color: var(--color-black)
 
 
 /* Media queries */
