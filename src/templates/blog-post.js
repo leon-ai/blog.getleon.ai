@@ -60,7 +60,7 @@ const BlogPostTemplate = ({ data, location }) => {
           </div>
         </div>
         <br />
-        <p>Cheers 🍹,</p>
+        <p>Cheers <span role="img" aria-label="Cocktail">🍹</span>,</p>
         <p><em>{post.frontmatter.author.split(' ')[0]}</em>.</p>
       </article>
       <nav className="blog-post-nav">
