@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { Link, graphql } from 'gatsby'
+import { Link, graphql, Stati } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 
 import Layout from '../components/layout'
 import Seo from '../components/seo'
@@ -37,6 +38,12 @@ const BlogPostTemplate = ({ data, location }) => {
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
+        <div className="edit-or-share-container">
+          <ul>
+            <li><a href={`https://twitter.com/intent/tweet?source=webclient&original_referer=${location.href}&text=${post.frontmatter.title}&url=${location.href}&via=louistiti_fr`} target="_blank" rel="noreferrer">Share on Twitter</a></li>
+            <li><a href={`https://github.com/leon-ai/blog.getleon.ai/edit/master/content/blog${location.pathname}/index.md`} target="_blank" rel="noreferrer">Edit on GitHub</a></li>
+          </ul>
+        </div>
         <div className="newsletter-container">
           <div className="newsletter-info">
             <h2>
@@ -50,7 +57,7 @@ const BlogPostTemplate = ({ data, location }) => {
                 No spam. Unsubscribe at any time.
               </em>
             </p>
-            <img src="https://img.icons8.com/color/452/love-letter--v1.png" width={56} alt=""/>
+            <img src="/images/newsletter.png" width={56} alt="Newsletter" />
           </div>
           <div className="newsletter-form-container">
             <form action="https://www.getrevue.co/profile/leon/add_subscriber" method="post" target="_blank">

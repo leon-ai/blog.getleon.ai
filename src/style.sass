@@ -437,6 +437,18 @@ article
 .gatsby-highlight
   margin-bottom: var(--spacing-8)
 
+.edit-or-share-container
+  margin-bottom: var(--spacing-8)
+  ul
+    margin: 0
+    list-style: none
+    li
+      display: inline
+      &:first-child::before
+        content: none
+      &::before
+        content: ' • '
+
 .newsletter-container
   display: flex
   justify-content: space-around
