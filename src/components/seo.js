@@ -19,6 +19,7 @@ const Seo = ({ description, lang, meta, title, twitterImage,
           siteMetadata {
             title
             description
+            siteUrl
           }
         }
       }
@@ -54,7 +55,7 @@ const Seo = ({ description, lang, meta, title, twitterImage,
         },
         {
           property: 'og:image',
-          content: ogImage || 'DEFAULT OG IMAGE'
+          content: ogImage || `${site.siteMetadata.siteUrl}/og_social_card.png`
         },
         {
           name: 'twitter:card',
@@ -70,7 +71,7 @@ const Seo = ({ description, lang, meta, title, twitterImage,
         },
         {
           name: 'twitter:image',
-          content: twitterImage || 'DEFAULT TWITTER IMAGE'
+          content: twitterImage || `${site.siteMetadata.siteUrl}/twitter_social_card.png`
         },
         {
           name: 'twitter:dnt',
