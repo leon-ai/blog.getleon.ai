@@ -10,6 +10,7 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-sass',
     'gatsby-plugin-dark-mode',
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-twitter',
     {
       resolve: 'gatsby-plugin-canonical-urls',
@@ -93,7 +94,7 @@ module.exports = {
             query: `
               {
                 allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] },
+                  sort: { order: DESC, fields: [frontmatter___date] }
                 ) {
                   nodes {
                     excerpt
