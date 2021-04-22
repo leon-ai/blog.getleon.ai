@@ -10,7 +10,7 @@ const BlogPostTemplate = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || 'Title'
   const { previous, next } = data
   const authorImg = require(`../images/authors/${post.frontmatter.author.toLowerCase().replaceAll(' ', '_')}.png`).default
-
+  
   return (
     <Layout location={location} title={siteTitle}>
       <Seo
@@ -18,8 +18,8 @@ const BlogPostTemplate = ({ data, location }) => {
         titleTemplate={`%s | ${siteTitle}`}
         description={post.frontmatter.description || post.excerpt}
         ogType="article"
-        ogImage={post.frontmatter.ogImage}
-        twitterImage={post.frontmatter.twitterImage}
+        ogImage={`${data.site.siteMetadata.siteUrl}/images/social${location.pathname.slice(0, -1)}-og_social_card.png`}
+        twitterImage={`${data.site.siteMetadata.siteUrl}/images/social${location.pathname.slice(0, -1)}-twitter_social_card.png`}
       />
       <article
         className="blog-post"
@@ -114,6 +114,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     markdownRemark(id: { eq: $id }) {

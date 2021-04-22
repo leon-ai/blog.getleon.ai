@@ -3,8 +3,6 @@ title: The Story Behind Leon
 date: 2019-02-17
 author: Louis Grenard
 description: Learn about the origins of the project.
-ogImage: OG image test
-twitterImage: Twitter image test
 ---
 
 **Big disclosure**: I never watched the movie *Léon: The Professional* (at least not yet).
