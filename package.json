@@ -42,6 +42,7 @@
     "gatsby-plugin-twitter": "^3.2.0",
     "gatsby-remark-autolink-headers": "^4.0.0",
     "gatsby-remark-copy-linked-files": "^3.2.0",
+    "gatsby-remark-external-links": "0.0.4",
     "gatsby-remark-images": "^4.2.0",
     "gatsby-remark-prismjs": "^4.2.0",
     "gatsby-remark-responsive-iframe": "^3.2.0",

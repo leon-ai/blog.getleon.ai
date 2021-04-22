@@ -2,7 +2,7 @@
 title: The 1.0.0-beta.2 Has Arrived
 date: 2019-04-24
 author: Louis Grenard
-description: Desc test.
+description: The 1.0.0-beta.2 version is here! Discover what's new and what's going to happen next.
 ogImage: OG image test
 twitterImage: Twitter image test
 ---
