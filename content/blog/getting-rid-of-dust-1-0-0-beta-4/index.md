@@ -29,15 +29,33 @@ Let's focus on the technical part as the other part will be covered in another b
 
 ### Dependency Updates
 
-Let images speak for themselves...
+That is what happens when you don't update your project dependencies for about 2 years... Let images speak for themselves.
 
+#### After a `npm install`:
 
+![npm vulnerabilities](npm-vulns.png)
 
-This is what happens when you don't update your project dependencies for about 2 years... Luckily npm is a well advanced packages manager, but imagine if you don't have any visibilities on your tree dependencies. So we must feel lucky to have such great tools out there to solve this.
+#### After a `npm run build`:
+
+![Node.js warnings](warns.png)
+
+#### How The Commit History Looked Like...
+
+![Dependency commits](dep-commits.png)
+
+I believe you got a rough idea of what needed to be done. Clearly I **updated all dependencies that Leon relies on**. Of course I could make use of tools such as [Dependabot](https://dependabot.com/) but I preferred to update everything manually. It allowed me to have a better control of what I was doing and see if each dependency still has its seat in the project. I read the changelog of each dependency to understand what has changed, has been improved and check if there was any breaking change.
+
+#### Dropping Husky
+
+Leon was using [Husky](https://typicode.github.io/husky/#/) that was triggering a script I wrote to parse a commit message on the `commit-msg` Git hook. It was working pretty well after the update, but GUIs like [GitKraken](https://www.gitkraken.com/) was not working properly anymore due to their recent changes (as it was working well before). So I decided to **drop Husky** or any Git hook trigger scripts because I don't want this be a bottleneck for contributors. So I keep it simple without commit restriction. I believe that the [CONTRIBUTING.md](https://github.com/leon-ai/leon/blob/develop/.github/CONTRIBUTING.md#commits) file is enough to understand how to commit to the project. However, it's quite important to respect the commit convention as it eases the changelog generation for each new release.
+
+#### Dropping Babel?
+
+With...
 
 ### Fix Hotword Detection
 
-Based on Node.js... Using Snowboy... Need to find a better way in the future...
+Based on Node.js... Using Snowboy... Need to find a better way in the future... Feel free to suggest some solutions.
 
 ## There is More...
 
@@ -71,6 +89,7 @@ Divlo...
 
 - Haveibeenpwned package, need key now
 - IBM voice...
+- Remove Husky...
 - Nearly none, see Trello cards
 
 ## What's Next
