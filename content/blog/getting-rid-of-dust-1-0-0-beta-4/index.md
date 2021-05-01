@@ -9,8 +9,6 @@ description: After 2 years, a new release is finally out... Learn about technica
 
 Today, we'll focus on this new release and understand what's new, where the project is leading to and the thinking process behind some decisions.
 
-HOW TO INSTALL THE NEW VERSION
-
 ## Main Focus
 
 The focus of this release is quite obvious. 2 years pause on a project requires a deep work on:
@@ -69,6 +67,12 @@ But here is the thing, I want to continue to use the [`module-alias` npm package
 
 I might **come back to this task once the ecosystem will be more ready**.
 
+#### Raspberry Support?
+
+Thanks to the last changes, apparently Leon might work on **at least Raspberry 3B+** as per [this comment](https://github.com/leon-ai/leon/issues/37#issuecomment-803709534). A deeper look will be provided on this side.
+
+Feel free to contribute.
+
 ### Fix Hotword Detection
 
 Leon uses [Snowboy](https://github.com/Kitt-AI/snowboy) for its hotword detection. Unfortunately the project has been discontinued and is suffering from the lack of maintainability. 
@@ -109,7 +113,7 @@ Until a while I was always using [CircleCI](https://circleci.com/) for my projec
 
 However, since GitHub has launched [GitHub Actions](https://github.com/features/actions) I liked the idea of having the codebase close to the CI, so we don't need to get out of the GitHub ecosystem.
 
-Sometimes on CircleCI, Leon was having troubles since the Node.js 14+ upgrade from the Leon's CI Docker image. The same Docker image was finishing all the jobs perfectly on different machines but not in CircleCI ones. It was timing out or finishing with an error for the end-to-end modules tests. The error was related to the Node.js [child process](https://nodejs.org/api/child_process.html) that did not work. So my bet is it was sometimes running out of memory.
+Sometimes on CircleCI, Leon was having troubles since the Node.js 14+ upgrade from the Leon's CI Docker image. The same Docker image was finishing all the jobs perfectly on different machines but not on CircleCI ones. It was timing out or finishing with an error for the end-to-end modules tests. The error was related to the Node.js [child process](https://nodejs.org/api/child_process.html) that did not work. So my bet is it was sometimes running out of memory.
 
 Since I migrated to GitHub Actions, none of these happened. As Leon was using the Docker type on CircleCI, it looks like there is bit more hardware power on GitHub Actions. I did not try with the raw CircleCI Linux types as I wanted to use the [Leon's Docker image dedicated for its CI](https://hub.docker.com/r/leonai/ci/).
 
@@ -131,27 +135,42 @@ If you are interested in migrating from CircleCI to GitHub Actions, GitHub has p
 
 ### From Express.js to Fastify
 
-Divlo...
+Leon needs an HTTP server to allow clients to grab some metadata such as the version, language, etc. and for more in the future... This is also where the WebSocket handshake happens to establish a bi-directional connection with clients.
 
-...
+Most of the time we hear about [Express.js](https://expressjs.com/) because it is a well established web framework in the Node.js ecosystem, since the early days. But [Fastify](https://www.fastify.io/) also joined the [OpenJS Foundation](https://openjsf.org/projects/) which means it is also serious.
+
+I agree with most of what is explained in [this article](https://dev.to/romainlanz/why-you-should-drop-expressjs-in-2021-711).
+
+Thanks to the great job from [Divlo](https://github.com/Divlo), the migration is shipped with this new release. 
 
 ### Try Leon with a Single-Click
 
 ![Leon loves Gitpod](gitpod.jpeg)
 
-...
+You can try Leon with a single-click thanks to [Gitpod](https://www.gitpod.io/).
+
+It will automatically setup an environment with all the requirements and run an instance for you. It allows potential contributors to get started pretty fast and add value to the project.
+
+You can [try it here](https://gitpod.io/#https://github.com/leon-ai/leon).
+
+Again, kudos to [Divlo](https://github.com/Divlo) for suggesting and making this happens 👏
 
 ### Force Minimum Node.js Version
 
-...
+To ensure that the minimum Node.js and npm versions are respected, the following has been added to the `package.json` file:
 
-### New NLP
+```json
+"engines": {
+  "node": ">=14.0.0",
+  "npm": ">=5.0.0"
+}
+```
 
-...
+### New <abbr title="Natural Language Processing">NLP</abbr>
 
-### Docker Files Improvements
+Since the previous release, [NLP.js](https://github.com/axa-group/nlp.js) pushed a lot of work and has released a major version, moving from a monolithic library to multiple independent packages. So I spent some time to make Leon's NLP compatible to the latest changes.
 
-...
+These changes mostly include the <abbr title="Named Entity Recognition">NER</abbr> and <abbr title="Natural Language Understanding">NLU</abbr> of Leon and still makes use of neural network.
 
 ### Always More...
 
@@ -159,16 +178,28 @@ Please feel free to take a look at the [roadmap](https://roadmap.getleon.ai/) to
 
 ## Breaking Changes
 
-- Haveibeenpwned package, need key now
-- IBM voice...
-- Remove Husky...
-- Nearly none, see Trello cards
+This release includes a few if it's nearly none breaking changes:
+
+- **Have I Been Pwned module**: it now requires [a key](https://github.com/leon-ai/leon/tree/develop/packages/checker#have-i-been-pwned) to be able to request their API.
+- **IBM Watson**: IBM will shutdown their legacy API (end of life on 26 May 2021). Leon complies to the last changes of the IBM Watson Node.js SDK. If you are using Watson TTS or Watson STT, you can make the changes as specified in [the docs](https://docs.getleon.ai/configuration.html#watson).
+- **Amazon Polly**: Amazon did a complete modular rewrite of their Node.js SDK. Leon complies to these changes. If you are using Amazon Polly, make sure to pull the last configuration file structure for Amazon Polly.
 
 ## What's Next
 
-- Main goals: make drastic improvements on foundations/core and tooling; grow the community; be close to closed source assistant; rushing modules...
-- Blog post about the Coming Back and things I mentioned earlier.
-- Rebranding + Full React. Like this new blog is based on Gatsby(link)
-- CLI (kudos to Divlo and Arthur. )
-- You're welcome to contribute and join the new Discord
-- Check the roadmap
+### Long Term
+
+In the long term, an important guideline needs to be followed so Leon can shine better:
+
+1. **Drastic improvements** need to be done on the **foundations/core** and the **tooling** sides. That includes context in modules, JavaScript bridge so we can write JavaScript modules, widgets for better looking module outputs, dynamic multi-languages support on edge, new clients and so on...
+2. Then we hope we can **grow the community** bigger thanks to what Leon will be able to do.
+3. **Scale** Leon with new **useful modules**.
+4. The idea is to **get closer and closer to closed source assistants** thanks to the growing community and better foundations. But by **ALWAYS** keeping the core open and a flexibility that challenges our imagination.
+
+### Shorter Term
+
+In a shorter term, here is what we can expect to see:
+
+- A **blog post** explaining my **Coming Back** on the project, the **WHY** and things I mentioned earlier. It's important for me to **share you my thoughts and this journey**.
+- A **full rebranding** with a new visual identity of the project that **reflects** more the **values and vision of Leon**.
+- **The CLI** so it improves the onboarding experience by removing the hassle of the requirements, centralizing commands and more... Kudos to [Arthur](https://github.com/ArthurDelamare) and [Divlo](https://github.com/Divlo) who are working on it! 👏
+- Take a look at the **[roadmap](https://roadmap.getleon.ai/)** to see more.
