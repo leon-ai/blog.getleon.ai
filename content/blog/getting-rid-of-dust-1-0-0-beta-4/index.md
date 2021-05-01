@@ -1,13 +1,13 @@
 ---
 title: Getting Rid of Dust / 1.0.0-beta.4
-date: 2021-04-23
+date: 2021-05-01
 author: Louis Grenard
-description: After 2 years, a new release is finally out... Learn about technical debt and what this release contains.
+description: After 2 years, a new release is finally out... Learn about the main focus of this release and what it contains.
 ---
 
 👋 Hey all, the time has come... Like **finally**! I know it has been a long time. The project has been paused for about 2 years. We'll talk about the reasons of this endless pause in another blog post.
 
-Today, we'll focus on this new release and understand what's new, where the project is leading to and the thinking process behind some decisions.
+Today, we'll focus on the new release of [Leon](https://github.com/leon-ai/leon) and understand what's new, where the project is leading to and the thinking process behind some decisions.
 
 ## Main Focus
 
