@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@fontsource/jetbrains-mono": "^4.2.2",
-    "@fontsource/source-sans-pro": "^4.2.2",
+    "@fontsource/source-sans-pro": "^4.3.0",
     "gatsby": "^3.5.1",
     "gatsby-plugin-canonical-urls": "^3.3.0",
     "gatsby-plugin-dark-mode": "^1.1.2",
