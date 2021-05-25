@@ -64,11 +64,32 @@ In the future, this CLI will become an even more important piece of the Leon eco
 
 The first version of the CLI focus exclusively on the setup of Leon. And it moving forward well!
 
-I let Divlo and Arthur tell us more about it as they are the heroes working on this essential piece.
+I let [Divlo](https://github.com/Divlo) and [Arthur](https://github.com/ArthurDelamare) tell us more about it as they are the heroes working on this essential piece.
 
 ### What Has Been Done
 
-👋 Divlo...
+👋 Hey, I'm [Divlo](https://github.com/Divlo), a Full Stack developer that love open source.
+
+Talking about open source, we're currently working hard to achieve the goal of **making easier the installation of Leon** for newcomers, we prefer to prepare the basic features first before releasing the **public version in open source**.
+
+To arouse your curiosity and while you wait for this new version, I will show you some **features that has already been done**.
+Don't forget that the best place to follow the progress and the future of Leon is on the [Trello](https://trello.com/c/GDwCseLi/106-%E2%9C%A8-100-beta5-cli-100).
+
+The most intuitive and first command that we had to do is a help command. You would be able to run `leon` or `leon --help` and you will get this awesome output, to know how to use the Command Line Interface (CLI).
+
+![Leon Command Line Interface Help](./leon-cli-help.png)
+
+Casually, just by showing you this screenshot, it gives you a lot of information of what the Command Line Interface (CLI) is able to do.
+
+As you can see, there is this `leon create birth` command, it will automatically install all the requirements needed and the source code of Leon in the right place, it doesn't matter the operating system you are using, it should work on Windows, macOS and Linux with no problems, it is as simple as that (at least for you, our users 😅)!
+
+**Fun Fact**: By using this command, you give birth to Leon, not only you install him on your local machine, but you bring him to life too! 👶
+
+Once born, you will be able to run `leon start` and visit `localhost:1337` as you normally would, so you can start interacting with Leon.
+
+![Leon Command Line Interface Start](./leon-cli-start.png)
+
+Now that I made you dream, I will let [Arthur](https://github.com/ArthurDelamare) explains what remains to be done.
 
 ### What is Missing Before the Release
 
@@ -94,7 +115,7 @@ In the [previous blog post](https://blog.getleon.ai/getting-rid-of-dust-1-0-0-be
 
 But still, I decided to go deeper with Dependabot and give it a try.
 
-So I installed it on the main, blog and docs repositories. I scheduled a weekly check on Friday at 22:00 UTC. 
+So I installed it on the main, blog and docs repositories. I scheduled a weekly check on Friday at 22:00 UTC.
 
 In that way I can spend a few minutes to review these 3 repos once a week and safely update the dependencies.
 
