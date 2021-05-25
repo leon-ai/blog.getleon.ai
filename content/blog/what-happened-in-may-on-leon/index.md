@@ -27,6 +27,8 @@ With all that said, I picked up the main theme for Leon, which will be the **out
 
 At the moment, I'm working on a few assets such as the one above which will be implemented on the landing page of getleon.ai.
 
+### My (Design) Web Page Process
+
 Here is how I like to put things together before creating a new web page:
 
 ![My web page process](./my-web-page-process.jpeg)
@@ -44,6 +46,8 @@ The wireframe has also been drawn:
 
 Along with the assets, I'm working on sketching the new landing page.
 
+### My Design Toolkit
+
 If you wonder what design-related tools I use, please find my toolkit below:
 
 - [Inkscape](https://inkscape.org/): to work on assets that requires isomorphic/3D look. It is easy to get started with, user friendly and open source. What can you ask more?
@@ -51,6 +55,24 @@ If you wonder what design-related tools I use, please find my toolkit below:
 - [Figma](https://figma.com/): to design user interfaces, wireframes or prototypes. Until now I was using [Sketch](https://sketch.com/), but I feel Figma makes it easier to share with the outside world.
 - [SVGOMG](https://jakearchibald.github.io/svgomg/): to optimize or clean up SVGs. Especially useful before animating SVGs.
 - Regarding animations, I mostly make use of CSS animations but I might also use [Rive](https://rive.app/), [LottieFiles](https://lottiefiles.com/) or a similar tool. If you have a go-to to animate SVGs, please drop an email at <louis.grenard@gmail.com> 😉
+
+## The Progress on the CLI
+
+As Leon requires several prerequisites to get running, it can quickly become a hassle for some people to spend time to install them. That's where we'll leverage from the first version of the CLI. It will allow us to install all these prerequisites at once, supporting Linux, Windows and macOS.
+
+In the future, this CLI will become an even more important piece of the Leon ecosystem as new commands will be implemented to make a better use of Leon.
+
+The first version of the CLI focus exclusively on the setup of Leon. And it moving forward well!
+
+I let Divlo and Arthur tell us more about it as they are the heroes working on this essential piece.
+
+### What Has Been Done
+
+👋 Divlo...
+
+### What is Missing Before the Release
+
+👋 Arthur...
 
 ## Road to React
 
@@ -68,7 +90,7 @@ Once it'll be time to focus on the client mobile app, then I'll probably go for 
 
 ## Dependabot
 
-In the [previous blog post](https://blog.getleon.ai/getting-rid-of-dust-1-0-0-beta-4/) I talked about the noise caused by Dependabot. Then I received several good feedback about the grouping feature of Dependabot. Unfortunately, at the time I'm writing this article, Dependabot does not support 1 pull request for multiple dependencies updates.
+In the [previous blog post](https://blog.getleon.ai/getting-rid-of-dust-1-0-0-beta-4/) I talked about the noise caused by Dependabot. Then I received several good feedback about the grouping feature that Dependabot offers. We can set the frequency of when it needs to notify about updates. Unfortunately, at the time I'm writing this article, Dependabot does not support 1 pull request for multiple dependency updates.
 
 But still, I decided to go deeper with Dependabot and give it a try.
 
@@ -92,14 +114,16 @@ updates:
       - 'louistiti'
 ```
 
-## GPT or BERT in Leon?
+## GPT or BERT Language Model in Leon?
 
-...
+The [roadmap](https://roadmap.getleon.ai/) is often changing. Not in terms of priorities (well, sometimes 😅) but in terms of upcoming features.
 
-## The Progress on the CLI
+Recently, I was thinking of adding a language model such as [GPT](https://en.wikipedia.org/wiki/OpenAI#GPT) from OpenAI or [BERT](https://en.wikipedia.org/wiki/BERT_(language_model)) from Google to Leon. I got access to the GPT-3 playground from OpenAI and the possibilities are fantastic! GPT-2 could also be enough for now.
 
-...
+So it's not impossible to see that coming into Leon. Indeed, that would allow Leon to become more human friendly in case he does not understand a specific query, we could fallback to a text generation task or implement an alternative to question answering based on such language model.
 
-## Got a New Job
+With the CLI coming, we could think of adding that as an option, so we could have the choice to download the model via the CLI, and it'll be an easy plug and play as the code would already be ready for it once the model is downloaded.
 
-...
+The same goes for offline translations!
+
+Anyway, I just wanted to share some on-the-spot thoughts with you.
