@@ -1,8 +1,8 @@
 ---
-title: What Happened in May on Leon
+title: What Happened on May 2021 for Leon
 date: 2021-05-30
 author: Louis Grenard
-description: Let's dive into what happened on the project on May 2021.
+description: Let's dive into what happened on the project on May 2021. We have news about the rebranding and the upcoming CLI!
 ---
 
 👋 Hey all, here is a summary of what happened on Leon over the month of May 2021.
@@ -27,7 +27,7 @@ With all that said, I picked up the main theme for Leon, which will be the **out
 
 At the moment, I'm working on a few assets such as the one above which will be implemented on the landing page of getleon.ai.
 
-### My (Design) Web Page Process
+### My Web Page Process
 
 Here is how I like to put things together before creating a new web page:
 
