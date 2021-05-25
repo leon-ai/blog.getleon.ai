@@ -56,9 +56,41 @@ If you wonder what design-related tools I use, please find my toolkit below:
 
 The migration towards the React ecosystem has also began.
 
+I'll be using React more and more on work-related projects. So I feel it can be a good move to migrate most of the front-end nodes of Leon to React.
+
+Moreover, I love the functional approach that React brings. The large ecosystem and community are also a very attracted point.
+
+So, that's why this blog has moved from [Hexo](https://hexo.io/) to [Gatsby](https://www.gatsbyjs.com/) and the docs has moved from [VuePress](https://vuepress.vuejs.org/) to [Docusaurus](http://docusaurus.io/)!
+
+The upcoming landing page will benefit from [Next.js](https://nextjs.org/).
+
+Once it'll be time to focus on the client mobile app, then I'll probably go for [React Native](https://reactnative.dev/).
+
 ## Dependabot
 
-...
+In the [previous blog post](https://blog.getleon.ai/getting-rid-of-dust-1-0-0-beta-4/) I talked about the noise caused by Dependabot. Then I received several good feedback about the grouping feature of Dependabot. Unfortunately, at the time I'm writing this article, Dependabot does not support 1 pull request for multiple dependencies updates.
+
+But still, I decided to go deeper with Dependabot and give it a try.
+
+So I installed it on the main, blog and docs repositories. I scheduled a weekly check on Friday at 22:00 UTC. 
+
+In that way I can spend a few minutes to review these 3 repos once a week and safely update the dependencies.
+
+```yaml
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'friday'
+      time: '22:00'
+    commit-message:
+      prefix: 'chore'
+      include: 'scope'
+    reviewers:
+      - 'louistiti'
+```
 
 ## GPT or BERT in Leon?
 
