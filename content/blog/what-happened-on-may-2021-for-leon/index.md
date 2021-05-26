@@ -9,7 +9,7 @@ description: Let's dive into what happened on the project on May 2021. We have n
 
 Usually most of the work related to Leon happens on the [main repository](https://github.com/leon-ai/leon). However, there is a beginning of an ecosystem on Leon, so there is also work happening outside of this repository.
 
-We are mostly focusing on **the rebranding** and thanks to [Divlo](https://github.com/Divlo) and [Arthur](https://github.com/ArthurDelamare) we can also focus on the **CLI** in parallel which they'll tell you more in this blog post.
+We are mostly focusing on **the rebranding** and thanks to [Divlo](https://github.com/Divlo) and [Arthur](https://github.com/ArthurDelamare) we can also focus on the **<abbr title="Command-Line Interface">CLI</abbr>** in parallel which they'll tell you more in this blog post.
 
 ## The Rebranding
 
@@ -17,13 +17,13 @@ We are mostly focusing on **the rebranding** and thanks to [Divlo](https://githu
 
 The rebranding has started. Indeed, the project has paused for about 2 years, so I feel it is necessary to give a fresher look to Leon and the sub projects.
 
-Besides the fresher look, I noticed that a lot of open-source projects don't really invest time and energy on the overall appearance. I totally understand that as it might not be the most important priority, but I want to make it different with Leon. I want to make it a priority. The same goes with the user experience.
+Besides the fresher look, I noticed that a lot of open-source projects don't really invest time and energy on the overall appearance. I totally understand that as it might not be the most important priority, but I want to make it different with Leon. I want to make it a priority. The same applies for the user experience.
 
 I wish Leon reflects the vision, the whys I started Leon at the first place, what can inspires people, myself, and so on.
 
 Other than writing code, I also enjoy working on user interfaces, designs and all things related to colors, shades and shapes! So why not use it?
 
-With all that said, I picked up the main theme for Leon, which will be the **outer space**. There are a few reasons behind that, but we'll dig into that in another blog post once the rebranding will be more advanced. Actually you can have an overview with [this roadmap card](https://trello.com/c/Y5GH6162/322-%F0%9F%93%9D-100-beta5-think-of-visual-identity-design).
+With all that said, I picked up the main theme for Leon, which will be the **outer space**. There are a few reasons behind that, but we'll dig into that in another blog post once the rebranding will be more advanced. Actually you can already have an overview with [this roadmap card](https://trello.com/c/Y5GH6162/322-%F0%9F%93%9D-100-beta5-think-of-visual-identity-design).
 
 At the moment, I'm working on a few assets such as the one above which will be implemented on the landing page of getleon.ai.
 
@@ -44,13 +44,13 @@ The wireframe has also been drawn:
 
 ![getleon.ai wireframe](./wireframe.png)
 
-Along with the assets, I'm working on sketching the new landing page.
+Along with the assets, I'm at the moment working on sketching the new landing page.
 
 ### My Design Toolkit
 
 If you wonder what design-related tools I use, please find my toolkit below:
 
-- [Inkscape](https://inkscape.org/): to work on assets that requires isomorphic/3D look. It is easy to get started with, user friendly and open source. What can you ask more?
+- [Inkscape](https://inkscape.org/): to work on assets that requires isomorphic/3D look. It is easy to get started with, user friendly and open source. What can we ask more?
 - [Excalidraw](https://excalidraw.com/): to create schema with a drawing look. Such as the one I made to explain my process before creating a web page.
 - [Figma](https://figma.com/): to design user interfaces, wireframes or prototypes. Until now I was using [Sketch](https://sketch.com/), but I feel Figma makes it easier to share with the outside world.
 - [SVGOMG](https://jakearchibald.github.io/svgomg/): to optimize or clean up SVGs. Especially useful before animating SVGs.
@@ -58,30 +58,32 @@ If you wonder what design-related tools I use, please find my toolkit below:
 
 ## The Progress on the CLI
 
-As Leon requires several prerequisites to get running, it can quickly become a hassle for some people to spend time to install them. That's where we'll leverage from the first version of the CLI. It will allow us to install all these prerequisites at once, supporting Linux, Windows and macOS.
+As Leon requires several prerequisites to get running, it can quickly become a hassle for some people to spend time to install them. We already have a Dockerfile that can help with this, but not everyone wish to use Docker.
+
+That's where we'll leverage from the first version of the CLI. It will allow us to install all these prerequisites at once, supporting Linux, Windows and macOS.
 
 In the future, this CLI will become an even more important piece of the Leon ecosystem as new commands will be implemented to make a better use of Leon.
 
-The first version of the CLI focus exclusively on the setup of Leon. And it moving forward well!
+The first version of the CLI focus exclusively on the setup of Leon. And it's moving forward well!
 
-I let [Divlo](https://github.com/Divlo) and [Arthur](https://github.com/ArthurDelamare) tell us more about it as they are the heroes working on this essential piece.
+I let Divlo and Arthur tell us more about it as they are the heroes working on this essential piece.
 
 ### What Has Been Done
 
-👋 Hey, I'm [Divlo](https://github.com/Divlo), a Full Stack developer that love open source.
+👋 Hey, I'm [Divlo](https://github.com/Divlo), a Full Stack developer who loves open source.
 
-Talking about open source, we're currently working hard to achieve the goal of **making easier the installation of Leon** for newcomers, we prefer to prepare the basic features first before releasing the **public version in open source**.
+We're currently working hard to achieve the goal of **making the installation of Leon much easier** for newcomers, we prefer to prepare the basic features first before to **open source the first version**.
 
 To arouse your curiosity and while you wait for this new version, I will show you some **features that has already been done**.
-Don't forget that the best place to follow the progress and the future of Leon is on the [Trello](https://trello.com/c/GDwCseLi/106-%E2%9C%A8-100-beta5-cli-100).
+Don't forget that the best place to follow the progress and the future of Leon is on the [roadmap](https://trello.com/c/GDwCseLi/106-%E2%9C%A8-100-beta5-cli-100).
 
-The most intuitive and first command that we had to do is a help command. You would be able to run `leon` or `leon --help` and you will get this awesome output, to know how to use the Command Line Interface (CLI).
+The most intuitive and first command that we had to do is a help command. You would be able to run `leon` or `leon --help` and you will get this awesome output, to know how to use the CLI:
 
 ![Leon Command Line Interface Help](./leon-cli-help.png)
 
-Casually, just by showing you this screenshot, it gives you a lot of information of what the Command Line Interface (CLI) is able to do.
+Casually, just by showing you this screenshot, it gives you a lot of information of what the CLI is able to do.
 
-As you can see, there is this `leon create birth` command, it will automatically install all the requirements needed and the source code of Leon in the right place, it doesn't matter the operating system you are using, it should work on Windows, macOS and Linux with no problems, it is as simple as that (at least for you, our users 😅)!
+As you can see, there is this `leon create birth` command, it will automatically install all the requirements and the source code of Leon at the right place. Whatever the operating system you are using, it should work on Windows, macOS and Linux with no trouble, it is as simple as that!
 
 **Fun Fact**: By using this command, you give birth to Leon, not only you install him on your local machine, but you bring him to life too! 👶
 
@@ -89,11 +91,11 @@ Once born, you will be able to run `leon start` and visit `localhost:1337` as yo
 
 ![Leon Command Line Interface Start](./leon-cli-start.png)
 
-Now that I made you dream, I will let [Arthur](https://github.com/ArthurDelamare) explains what remains to be done.
+Now that you know more about what has been done until now, I will let Arthur explains what remains to be done.
 
 ### What is Missing Before the Release
 
-👋 Arthur...
+👋 [Arthur](https://github.com/ArthurDelamare)...
 
 ## Road to React
 
