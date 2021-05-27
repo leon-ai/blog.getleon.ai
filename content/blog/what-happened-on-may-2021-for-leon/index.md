@@ -46,6 +46,8 @@ The wireframe has also been drawn:
 
 Along with the assets, I'm at the moment working on sketching the new landing page.
 
+[Here is the Figma link](https://www.figma.com/file/lFQ0tqHyYAfD5RsKk9nUtJ/getleon.ai-sketch), so you can follow the progress in real time.
+
 ### My Design Toolkit
 
 If you wonder what design-related tools I use, please find my toolkit below:
