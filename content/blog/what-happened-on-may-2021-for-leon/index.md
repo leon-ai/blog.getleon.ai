@@ -97,7 +97,7 @@ Now that you know more about what has been done until now, I will let Arthur exp
 
 ### What is Missing Before the Release
 
-👋 [Arthur](https://github.com/ArthurDelamare), Passionate Developer and newly wed to open-source contributions.
+👋 I'm [Arthur](https://github.com/ArthurDelamare), Passionate Developer and newly wed to open-source contributions.
 
 The CLI progress is right on track and we are that close to reach our goal. Before the release, here is what's left:
 - Achieve the Python requirement for our fellow Unix users, the last component to be done.
@@ -107,6 +107,8 @@ The CLI progress is right on track and we are that close to reach our goal. Befo
 After that, both classic and Docker installations will be ready to be used.
 
 I hope you'll enjoy using it as much as we enjoyed doing it!
+
+Back to [Louis](https://twitter.com/louistiti_fr).
 
 ## Road to React
 
