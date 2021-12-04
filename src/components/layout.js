@@ -67,14 +67,19 @@ const Layout = ({ location, title, children }) => {
       </header>
       <main>{children}</main>
       <footer className="global-footer">
-        <ul>
-          <li><a href="https://twitter.com/louistiti_fr" rel="noreferrer" target="_blank">twitter</a></li>
-          <li><a href="https://github.com/leon-ai/leon" rel="noreferrer" target="_blank">github</a></li>
-          <li><a href="https://getleon.ai" rel="noreferrer" target="_blank">getleon.ai</a></li>
-        </ul>
-        <ul>
-          <li><a href="/rss.xml">rss</a></li>
-        </ul>
+        <div className="footer-links">
+          <ul>
+            <li><a href="https://twitter.com/louistiti_fr" rel="noreferrer" target="_blank">twitter</a></li>
+            <li><a href="https://github.com/leon-ai/leon" rel="noreferrer" target="_blank">github</a></li>
+            <li><a href="https://getleon.ai" rel="noreferrer" target="_blank">getleon.ai</a></li>
+          </ul>
+          <ul>
+            <li><a href="/rss.xml">rss</a></li>
+          </ul>
+        </div>
+        <a href="https://vercel.com?utm_source=leon-ai&utm_campaign=oss" rel="noreferrer" target="_blank" className="powered-by-vercel">
+          <img src="/images/powered-by-vercel.svg" alt="Powered by Vercel" loading="lazy" width={172} />
+        </a>
       </footer>
     </div>
   )

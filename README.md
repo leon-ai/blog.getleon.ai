@@ -1,8 +1,8 @@
-# Leon Blog [![Netlify Status](https://api.netlify.com/api/v1/badges/9e1f6390-a336-497b-b908-02cd3ce8e28f/deploy-status)](https://app.netlify.com/sites/leon-blog/deploys)
+# Leon Blog [![Powered by Vercel](https://raw.githubusercontent.com/leon-ai/blog.getleon.ai/master/static/images/powered-by-vercel.svg)](https://vercel.com?utm_source=leon-ai&utm_campaign=oss)
 
 ## Overview
 
-This repository contains the blog of Leon. It is available at [blog.getleon.ai](https://blog.getleon.ai), built on the top of [Gatsby](https://www.gatsbyjs.com/) and hosted by [Netlify](https://www.netlify.com).
+This repository contains the blog of Leon. It is available at [blog.getleon.ai](https://blog.getleon.ai), built on the top of [Gatsby](https://www.gatsbyjs.com/) and proudly powered by [Vercel](https://vercel.com?utm_source=leon-ai&utm_campaign=oss).
 
 ## Development
 

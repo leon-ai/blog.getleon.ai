@@ -325,7 +325,16 @@ article
 
 .global-footer
   display: flex
-  justify-content: space-between
+  flex-direction: column
+
+  .footer-links
+    display: flex
+    justify-content: space-between
+
+  .powered-by-vercel
+    margin-top: 64px
+    align-self: center
+    width: 172px
 
 .global-footer li
   display: inline
