@@ -152,7 +152,7 @@ updates:
 
 ## GPT or BERT Language Model in Leon?
 
-The [roadmap](https://roadmap.getleon.ai/) is often changing. Not in terms of priorities (well, sometimes 😅) but in terms of upcoming features.
+The [roadmap](http://roadmap.getleon.ai/) is often changing. Not in terms of priorities (well, sometimes 😅) but in terms of upcoming features.
 
 Recently, I was thinking of adding a language model such as [GPT](https://en.wikipedia.org/wiki/OpenAI#GPT) from OpenAI or [BERT](https://en.wikipedia.org/wiki/BERT_(language_model)) from Google to Leon. I got access to the GPT-3 playground from OpenAI and the possibilities are fantastic! GPT-2 could also be enough for now.
 

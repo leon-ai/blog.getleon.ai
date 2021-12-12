@@ -174,7 +174,7 @@ These changes mostly include the <abbr title="Named Entity Recognition">NER</abb
 
 ### Always More...
 
-Please feel free to take a look at the [roadmap](https://roadmap.getleon.ai/) to have a full understanding of what has been done for this release.
+Please feel free to take a look at the [roadmap](http://roadmap.getleon.ai/) to have a full understanding of what has been done for this release.
 
 ## Breaking Changes
 
@@ -202,4 +202,4 @@ In a shorter term, here is what we can expect to see:
 - A **blog post** explaining my **Coming Back** on the project, the **WHY** and things I mentioned earlier. It's important for me to **share you my thoughts and this journey**.
 - A **full rebranding** with a new visual identity of the project that **reflects** more the **values and vision of Leon**.
 - **The CLI** so it improves the onboarding experience by removing the hassle of the requirements, centralizing commands and more... Kudos to [Arthur](https://github.com/ArthurDelamare) and [Divlo](https://github.com/Divlo) who are working on it! 👏
-- Take a look at the **[roadmap](https://roadmap.getleon.ai/)** to see more.
+- Take a look at the **[roadmap](http://roadmap.getleon.ai/)** to see more.

@@ -45,7 +45,7 @@ And have something that replied with a few details over voice and text. So I got
 
 A few weeks later I was thinking if Leon helps me, then it might also help others. So I decided to create a modular architecture, including one module to download videos from YouTube and save them on the device. I wanted that module because at that moment I was living an hour from my work via subway and I wanted to watch/listen to tech videos/podcasts during my transit time.
 
-**Early 2018** *—* On the 7th of January 2018 I created [Leon's roadmap](https://roadmap.getleon.ai) by setting up some cards such as [this one](https://trello.com/c/wt8W83AV/85-%F0%9F%93%9D-open-source) and started to inform myself about open-source ecosystems *(I highly recommend you [Open Source Guides](https://opensource.guide/))*. At that time, this is what Leon looked like:
+**Early 2018** *—* On the 7th of January 2018 I created [Leon's roadmap](http://roadmap.getleon.ai) by setting up some cards such as [this one](https://trello.com/c/wt8W83AV/85-%F0%9F%93%9D-open-source) and started to inform myself about open-source ecosystems *(I highly recommend you [Open Source Guides](https://opensource.guide/))*. At that time, this is what Leon looked like:
 
 ![Leon's beginning](beginning.gif)
 
@@ -88,7 +88,7 @@ Here are some numbers from the initial release:
 
 ## What's Next
 
-The numbers above are promising. This is great and thanks to all of you for supporting the project. However, there is a lot [upcoming](https://roadmap.getleon.ai), this first release is only the foundation of Leon.
+The numbers above are promising. This is great and thanks to all of you for supporting the project. However, there is a lot [upcoming](http://roadmap.getleon.ai), this first release is only the foundation of Leon.
 
 I already set the [next milestone](https://github.com/leon-ai/leon/milestone/1), the `1.0.0-beta.1` version. Now, Leon needs to grow up, he is only one week old. I count on you to help by [contributing](https://github.com/leon-ai/leon/blob/develop/.github/CONTRIBUTING.md).
 

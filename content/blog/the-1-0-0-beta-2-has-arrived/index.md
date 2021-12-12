@@ -58,7 +58,7 @@ It has been fixed.
 
 ### Others
 
-And other stuffs that you can find in the [changelog](<https://changelog.getleon.ai>).
+And other stuffs that you can find in the [changelog](<http://changelog.getleon.ai>).
 
 ## What's Next
 
@@ -73,4 +73,4 @@ In the meantime, here are the most important milestones for the `1.0.0-beta.3`:
 - [Context](<https://github.com/leon-ai/leon/issues/81>).
 - And probably more, such as some modules to confirm the features above.
 
-Do not hesitate to take a look at [the roadmap](<https://roadmap.getleon.ai>) to follow the progress of the project.
+Do not hesitate to take a look at [the roadmap](<http://roadmap.getleon.ai>) to follow the progress of the project.
