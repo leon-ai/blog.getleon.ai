@@ -1,27 +1,27 @@
 ---
 title: I Ran Away From Open Source
-date: 2021-12-20
+date: 2021-12-21
 author: Louis Grenard
 description: Let me explain my missing, share you my vision for Leon and what's going on in my head.
 ---
 
-👋 Hey all, I mentioned in the previous blog posts that I'd share with you the reasons of my missing over the last few years, the vision I have for [Leon](https://github.com/leon-ai/leon), your open-source personal assistant and more about what is going through my mind. So now is the time, let's get started!
+👋 Hey all, I mentioned in the previous blog posts that I'd share the reasons of my missing over the last few years, the vision I have for [Leon](https://github.com/leon-ai/leon), your open-source personal assistant, and more about what is going through my mind. So now is the time, let's get started!
 
 ### I Lost Focus
 
-In June 2019 I released the second beta version of Leon. On that moment I was in a dynamic mindset that I wanted to build anything I had in mind, it was not exclusive to Leon. I was going to bed, keep thinking about solutions to solve problems I was facing in life.
+In June 2019 I released the second beta version of Leon. On that moment, I was in a dynamic mindset that I wanted to build anything I had in mind. It was not exclusive to Leon. I went to bed, keep thinking about solutions to solve problems I was facing in life.
 
-I discovered the IoT world via my work on that time, it was fascinating. I love the whole concept of it. Building scalable architecture and most of all: pressing virtual or physical buttons to trigger actions that create physical impact on the other side of the globe.
+I discovered the IoT world via my work on that time. It was fascinating. I love the whole concept of it. Building scalable architecture and most of all: pressing virtual or physical buttons to trigger actions that create physical impact on the other side of the globe.
 
 Back in time, I created our own IoT pipeline using Microsoft Azure. I built the <abbr title="Public Key Infrastructure">PKI</abbr> to deliver and verify devices certificates. It was possible to control devices (send messages, invoke methods, etc.) from a web browser to the device. And it was also possible for devices to request the cloud and handle millions of connections thanks to the IoT hub and device provisioning service. All the data were handled via a stream analytics processor and landed into a data lake like CosmosDB and can also replicate important data to a PostgreSQL one if necessary. The main protocol between our cloud and devices was AMQP, but MQTT was also supported.
 
-At that time, I wanted to build anything that was going through my mind, everyday. Well, we can say that **I lost focus**. In such interesting and noisy world where there are infinite of possibilities, staying focus is maybe one of the hardest thing to do.
+At that time, I wanted to build anything that was going through my mind, everyday. Well, we can say **I lost focus**. In such interesting and noisy world where there are infinite of possibilities, staying focus is maybe one of the hardest thing to do.
 
 ### My Missing
 
 On top of that, I was questionning my career. I wanted to explore new horizons.
 
-Also, having a girlfriend with an entrepreneurship mindset does not help, I wanted to show her real results. We all know how challenging it is to express what we are doing or share what we are able to do with someone who isn't in the tech industry.
+Also, having a girlfriend with an entrepreneurship mindset does not help. I wanted to show her real results. We all know how challenging it is to express what we are doing or share what we are able to do with someone who isn't in the tech industry.
 
 So I got trapped into the **ego building** circle...
 
@@ -45,7 +45,7 @@ What's cool here is I may inject the core of 2aud.io into a Leon module. So Leon
 
 #### YouTube Videos + Community
 
-I was publishing web development videos on my [French YouTube channel](https://www.youtube.com/c/LouistitiFr), started a Node.js course by going in depth but with a language that everyone can understand, etc.
+I published web development videos on my [French YouTube channel](https://www.youtube.com/c/LouistitiFr), started a Node.js course by going in depth but with a language that everyone can understand, etc.
 
 Around that I put together a community with a Discord server. Today there are still 670+ applications lining up...
 
@@ -149,35 +149,3 @@ With all that said, the direction of Leon is quite clear. **I've been missing wo
 It feels good to be back!
 
 I recently opened my GitHub Sponsor so you can now [sponsor me on GitHub](http://sponsor.getleon.ai/) and get some perks.
-
-## Rebranding
-
-Along with the vision... Rebranding... 
-
-Visual identity: explain atmosphere and why. Sketch to design: sketch, then black and white then colors/shadows/details then web with animations
-
-https://trello.com/c/Y5GH6162/322-%F0%9F%93%9D-100-beta5-think-of-visual-identity-design
-
-Reasons behind this rebranding:
-
-- 2 years pause, need something fresh
-- Never really explained the vision of the project
-- Want the vision be inside the visual identity
-
-How I built the new landing page (tooling, SWC from Next.js, etc. optimize animations, etc.)
-
-Vercel sponsoring
-
-## CLI
-
-Why did we build a CLI? Most of the issues we receive are about requirements. So it seems there were a need to cover here.
-
-Introduce new main contributors. As working full-time again at... Then we can get on a higher speed here with more people
-
-CLI release, please share your feedback
-
-Features in the CLI
-
-Flowchart
-
-Let's get started now: show commands to install
