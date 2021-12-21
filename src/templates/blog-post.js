@@ -49,7 +49,7 @@ const BlogPostTemplate = ({ data, location }) => {
               Join the Journey
             </h2>
             <p>
-              Subscribe to the newsletter to get the latest news by email.
+              Get the latest news from Leon, your open-source personal assistant.
             </p>
             <p>
               <em>
