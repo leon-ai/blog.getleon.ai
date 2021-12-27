@@ -21,7 +21,7 @@ It has been possible thanks to the great [NLP.js library](<https://github.com/ax
 
 ### NLU Improvement
 
-It introduces query object and entities to improve NLU for more detailed queries. The docs [has been updated](<https://docs.getleon.ai/packages-modules.html#query-object-entities>).
+It introduces query object and entities to improve NLU for more detailed queries. The docs [has been updated](<https://docs.getleon.ai/packages-modules#entities>).
 
 Basically, it is now possible to make such detailed queries:
 
@@ -43,7 +43,7 @@ This new package contains two modules today. I decided to create them to validat
 
 ### Allowing HTML Output in The Answers
 
-As you might noticed in the GIF above, it is now possible to [use HTML](<https://docs.getleon.ai/packages-modules.html#html>) for a better rendering on the client.
+As you might noticed in the GIF above, it is now possible to [use HTML](<https://docs.getleon.ai/packages-modules#html>) for a better rendering on the client.
 
 ### Docker Installation Bugfix
 
@@ -53,8 +53,8 @@ It has been fixed.
 
 ### Docs Improvement
 
-- New [Installing Third Party Python Packages](<https://docs.getleon.ai/packages-modules.html#installing-third-party-python-packages>) section.
-- New [Query Object & Entities](https://docs.getleon.ai/packages-modules.html#query-object-entities) section.
+- New [Installing Third Party Python Packages](<https://docs.getleon.ai/packages-modules#installing-third-party-python-packages>) section.
+- New [Query Object & Entities](https://docs.getleon.ai/packages-modules#query-object-entities) section.
 
 ### Others
 

@@ -181,7 +181,7 @@ Please feel free to take a look at the [roadmap](http://roadmap.getleon.ai/) to 
 This release includes a few if it's nearly none breaking changes:
 
 - **Have I Been Pwned module**: it now requires [a key](https://github.com/leon-ai/leon/tree/develop/packages/checker#have-i-been-pwned) to be able to request their API.
-- **IBM Watson**: IBM will shutdown their legacy API (end of life on 26 May 2021). Leon complies to the last changes of the IBM Watson Node.js SDK. If you are using Watson TTS or Watson STT, you can make the changes as specified in [the docs](https://docs.getleon.ai/configuration.html#watson).
+- **IBM Watson**: IBM will shutdown their legacy API (end of life on 26 May 2021). Leon complies to the last changes of the IBM Watson Node.js SDK. If you are using Watson TTS or Watson STT, you can make the changes as specified in [the docs](https://docs.getleon.ai/configuration#watson).
 - **Amazon Polly**: Amazon did a complete modular rewrite of their Node.js SDK. Leon complies to these changes. If you are using Amazon Polly, make sure to pull the last configuration file structure for Amazon Polly.
 
 ## What's Next
