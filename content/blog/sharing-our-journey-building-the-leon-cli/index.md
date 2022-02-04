@@ -10,6 +10,14 @@ If you are not familiar with Leon yet, Leon is an open-source personal assistant
 
 We've noticed that the cause of several reported issues was because of how people setup requirements for Leon. Knowing that we all come from different backgrounds, it may be troublesome to get through this. So we have thought of a CLI to get your own Leon running in 3 commands.
 
+The two companions started working together with one common goal : make the installation easy, cross-platform and the most important of all, do it well. You guess it, many discussions were needed to have a proper plan (come and join us on the discord server, it's kinda cool there).
+
+Split the tasks, building a team work, a system to maintain a good quality, creating automation, manage our time... So many choices and only one pair of brains.
+
+Once upon a time a brainstorm, a really sweaty one ! For each idea, an item on our dear Trello card :
+- How many features ? The minimum, we would not want to confuse our friendly Leon users with unnecessary steps.
+- You asked for the tech stack ? This one is tricky. [...]
+
 ### How the Project is Organized
 
 - Tasks division... Knowing that you work on the Leon CLI on the side, how do you manage your time, etc.
