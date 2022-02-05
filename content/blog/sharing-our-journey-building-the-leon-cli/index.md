@@ -8,7 +8,7 @@ description: A developers story about how we've built the Leon CLI, the challeng
 
 If you are not familiar with Leon yet, Leon is an open-source personal assistant. He is based on Node.js for the core, and uses Python for his modules (skills). Therefore, several requirements need to be installed to start to fully enjoy the experience.
 
-We've noticed that the cause of several reported issues was because of how people setup requirements for Leon. Knowing that we all come from different backgrounds, it may be troublesome to get through this. So we have thought of a CLI to get your own Leon running in 3 commands.
+Installing these requirements can be a hassle, origins of several issues you reported were due to their setup. Knowing that we all come from different backgrounds, it may be troublesome to get through this. So we have thought of a CLI to get your own Leon running in 3 commands.
 
 ### How the Project is Organized
 
