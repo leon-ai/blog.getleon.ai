@@ -25,7 +25,7 @@ Once upon a time a brainstorm, a really sweaty one!
 
 How many features should we release? The minimum, we would not want to confuse our friendly Leon users with unnecessary steps.
 
-Even with a few features, we had our whole package of difficulties. Fortunately, we had a well structured task management system:
+Even with a few features, we had our whole package of difficulties. Fortunately, we had a well-structured task management system:
 - [Trello](https://trello.com/b/7bdwhnLr/leon-your-open-source-personal-assistant-roadmap) for the roadmap.
 - Discord to communicate, do pair-programming and communicate with the community.
 - [GitHub](https://github.com/leon-ai/leon-cli) to host our dear open-source CLI and discuss about implementation inside Pull Requests.
@@ -66,7 +66,7 @@ Let's dive into some experience feedback:
 
 How to easily add features without breaking existing ones? With a stable and trusted architecture.
 
-We started to talk about it before: Clipanion. But it's not the answer to everything... We also needed to reuse features between commands. The object oriented architecture and the services to isolate our functions per domains were a part of the answer.
+We started to talk about it before: Clipanion. But it's not the answer to everything... We also needed to reuse features between commands. The object-oriented architecture and the services to isolate our functions per domains were a part of the answer.
 
 To adapt to everyone and every architecture, each command has its set of options.
 
@@ -98,7 +98,7 @@ Feel free to post any idea you have [here](https://github.com/leon-ai/leon-cli/i
 
 A non-exhaustive list of incoming features:
 - `leon info` to get information of our Leon instances
-- `leon update` to obviously update Leon and see him evolve (get latest features)
+- `leon update` to obviously update Leon and see him evolve (get the latest features)
 - A better developer experience for the creation of modules / packages
 - Easily modify the configuration of Leon (text-to-speech, speech-to-text...)
 
