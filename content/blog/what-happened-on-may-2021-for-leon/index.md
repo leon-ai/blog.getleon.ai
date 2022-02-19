@@ -108,7 +108,7 @@ After that, both classic and Docker installations will be ready to be used.
 
 I hope you'll enjoy using it as much as we enjoyed doing it!
 
-Back to [Louis](https://twitter.com/louistiti_fr).
+Back to [Louis](https://twitter.com/grenlouis).
 
 ## Road to React
 

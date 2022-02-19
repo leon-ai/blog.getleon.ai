@@ -9,7 +9,7 @@ description: Learn about the origins of the project.
 
 ## Who Am I
 
-👋 Hey all, my name is [Louis Grenard](https://twitter.com/louistiti_fr), I was born in the '90s in the French mountains. I'm currently living in Shenzhen, China and working at a great company called [NOA Labs](https://www.noa-labs.com).
+👋 Hey all, my name is [Louis Grenard](https://twitter.com/grenlouis), I was born in the '90s in the French mountains. I'm currently living in Shenzhen, China and working at a great company called [NOA Labs](https://www.noa-labs.com).
 
 I love building things (I have since I was young), solving my GAN356 Air SM and I truly believe in [open source](https://github.com/louistiti).
 

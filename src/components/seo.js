@@ -79,7 +79,7 @@ const Seo = ({ description, lang, meta, title, twitterImage,
         },
         {
           name: 'twitter:creator',
-          content: '@louistiti_fr'
+          content: '@grenlouis'
         }
       ].concat(meta)}
     />

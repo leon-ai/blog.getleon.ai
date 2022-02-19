@@ -39,7 +39,7 @@ const BlogPostTemplate = ({ data, location }) => {
         />
         <div className="edit-or-share-container">
           <ul>
-            <li><a href={`https://twitter.com/intent/tweet?source=webclient&original_referer=${location.href}&text=${post.frontmatter.title}&url=${location.href}&via=louistiti_fr`} target="_blank" rel="noreferrer">Share on Twitter</a></li>
+            <li><a href={`https://twitter.com/intent/tweet?source=webclient&original_referer=${location.href}&text=${post.frontmatter.title}&url=${location.href}&via=grenlouis`} target="_blank" rel="noreferrer">Share on Twitter</a></li>
             <li><a href={`https://github.com/leon-ai/blog.getleon.ai/edit/master/content/blog${location.pathname}/index.md`} target="_blank" rel="noreferrer">Edit on GitHub</a></li>
           </ul>
         </div>

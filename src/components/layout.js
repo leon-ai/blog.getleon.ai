@@ -69,7 +69,7 @@ const Layout = ({ location, title, children }) => {
       <footer className="global-footer">
         <div className="footer-links">
           <ul>
-            <li><a href="https://twitter.com/louistiti_fr" rel="noreferrer" target="_blank">twitter</a></li>
+            <li><a href="https://twitter.com/grenlouis" rel="noreferrer" target="_blank">twitter</a></li>
             <li><a href="https://github.com/leon-ai/leon" rel="noreferrer" target="_blank">github</a></li>
             <li><a href="https://getleon.ai" rel="noreferrer" target="_blank">getleon.ai</a></li>
           </ul>
