@@ -75,6 +75,18 @@ Variables in the NLU
 
 ### Introducing Resolvers
 
+Use a separate model...
+
+...
+
+#### Global Resolvers
+
+...
+
+#### Skill Resolvers
+
+Is gonna be prioritized to target the resolver of the skill
+
 ...
 
 ### Cartesian Training Samples
