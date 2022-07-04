@@ -71,6 +71,9 @@ Variables in the NLU
 
 ### Introducing Suggestions
 
+On action level...
+On slot level...
+
 ...
 
 ### Introducing Resolvers
