@@ -55,7 +55,7 @@ People were sharing their projects progress during monthly calls we were organiz
 
 And we were working on our own projects during some immersive call sessions. The idea was to work during an hour in a row by muting microphones. Then we enabled back the mic to share our last hour progress and help each other if necessary for a few minutes. Then we kept going.
 
-Stay tuned because **I'd love to recreate the same model of community but around Leon!** If you are interested in that then feel free to [subscribe to the newsletter](http://newsletter.getleon.ai).
+Stay tuned because **I'd love to recreate the same model of community but around Leon!** If you are interested in that then feel free to [subscribe to the newsletter](http://revue.getleon.ai).
 
 **Benefits**:
 
