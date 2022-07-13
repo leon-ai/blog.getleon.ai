@@ -75,7 +75,9 @@ On action level...
 On slot level...
 
 Dialog + slots: show automatically
-Logic: need to be triggered from skill
+Logic: need to be triggered from skill:
+  - showNextActionSuggestions (next action)
+  - showSuggestions (current action)
 
 ...
 
