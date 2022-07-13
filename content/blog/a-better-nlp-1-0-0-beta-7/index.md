@@ -74,6 +74,9 @@ Variables in the NLU
 On action level...
 On slot level...
 
+Dialog + slots: show automatically
+Logic: need to be triggered from skill
+
 ...
 
 ### Introducing Resolvers
@@ -84,11 +87,13 @@ Use a separate model...
 
 #### Global Resolvers
 
+Use their own NLP model.
+
 ...
 
 #### Skill Resolvers
 
-Is gonna be prioritized to target the resolver of the skill
+Use their own NLP model.
 
 ...
 
