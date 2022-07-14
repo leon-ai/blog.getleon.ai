@@ -16,6 +16,8 @@ description: TODO...
 
 #### New Structure
 
+... Create image new structure ...
+
 On the core, but also for the skills...
 ...
 
@@ -25,9 +27,13 @@ Can easily access skill memory across other skills...
 
 ### Introducing Slots Filling
 
+... Create image of how it works under the hood ...
+
 ...
 
 ### Context Switching
+
+... Create image of how it works under the hood ...
 
 Classification prioritization belonging to the same domain first
 
@@ -38,6 +44,8 @@ Actually, remove it
 
 ### A More Powerful NER
 
+... Create image of the different levels of entities ...
+
 Leon has a custom TCP server and TCP client to be able to do IPC (Inter-Process Communication).
 In our case, spaCy. Makes use of PyTorch?
 New entities: person, cities, countries, organizations
@@ -46,7 +54,7 @@ New entities: person, cities, countries, organizations
 
 ### Global Entities
 
-Handsigns, colors, etc.
+Colors, etc.
 
 Map data to global entities
 
@@ -54,9 +62,13 @@ Map data to global entities
 
 ### Language Switching
 
+... Share screenshot ...
+
 ...
 
 ### Action Loop
+
+... Create image of how it works under the hood ...
 
 ...
 
@@ -71,6 +83,8 @@ Variables in the NLU
 
 ### Introducing Suggestions
 
+... Share screenshot ...
+
 On action level...
 On slot level...
 
@@ -82,6 +96,8 @@ Logic: need to be triggered from skill:
 ...
 
 ### Introducing Resolvers
+
+... Create image of how it works under the hood ...
 
 Use a separate model...
 
@@ -100,6 +116,8 @@ Use their own NLP model.
 ...
 
 ### Cartesian Training Samples
+
+... Provide examples ...
 
 ...
 
