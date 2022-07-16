@@ -7,6 +7,8 @@ description: TODO...
 
 👋 Hey all, intro...
 
+Create beautiful image to represent this blog post (with same type of color gradient as on the website and "3D" logo)
+
 
 ### From Modules to Skills
 
@@ -15,6 +17,8 @@ description: TODO...
 ...
 
 #### New Structure
+
+![New skills structure](new-skill-structure.png)
 
 ... Create image new structure ...
 
@@ -136,7 +140,16 @@ Basically to apply a real world use case into these newly introduced concepts...
 ...
 
 With such NLP foundations, we will be able to add many new things on the top...
-Focus on the visual side of the skills later... Widgets, MiniApps, etc.
+Next big milestones before the official release will be:
+
+1. TypeScript rewrite.
+2. Python SDK.
+3. Introduce JavaScript bridge with TypeScript SDK.
+4. Introduce widgets.
+5. Introduce miniapps.
+6. Languages scaling.
+7. Implement new STT/TTS offline and cloud solutions.
+8. Introduce the skills platform.
 
 At the moment only the web app is available, but later imagine what we'll be able to do with the mobile and desktop app based on these foundations...
 
