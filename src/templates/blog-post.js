@@ -9,7 +9,7 @@ const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || 'Title'
   const { previous, next } = data
-  const authorImg = `/images/authors/${post.frontmatter.author.toLowerCase().split(' ').join('_')}.png`
+  const authorImg = `/images/authors/${post.frontmatter.author.toLowerCase().split(' ').join('_')}.jpeg`
 
   return (
     <Layout location={location} title={siteTitle}>
