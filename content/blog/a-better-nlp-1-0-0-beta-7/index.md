@@ -18,7 +18,7 @@ Create beautiful image to represent this blog post (with same type of color grad
 
 #### New Structure
 
-![New skills structure](new-skill-structure.png?v=2)
+![New skills structure](new-skill-structure.png?v=3)
 
 On the core, but also for the skills...
 ...
@@ -26,12 +26,6 @@ On the core, but also for the skills...
 Categorized by domains, etc.
 Each skill contains its own memory.
 Can easily access skill memory across other skills...
-
-### Introducing Slots Filling
-
-... Create image of how it works under the hood ...
-
-...
 
 ### Context Switching
 
@@ -41,6 +35,12 @@ Classification prioritization belonging to the same domain first
 
 Add bread to the shopping list
 Actually, remove it
+
+...
+
+### Slot Filling
+
+![Slot filling](slot-filling.png)
 
 ...
 
@@ -97,7 +97,7 @@ Logic: need to be triggered from skill:
 
 ...
 
-### Introducing Resolvers
+### Resolvers
 
 ... Create image of how it works under the hood ...
 
