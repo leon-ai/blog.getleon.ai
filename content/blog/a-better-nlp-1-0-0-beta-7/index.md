@@ -57,7 +57,7 @@ Actually, remove it
 Entities
 - Built in (Microsoft) https://www.npmjs.com/package/@microsoft/recognizers-text-suite
 - spaCy
-- Custom
+- Custom (scoped in the skill action)
   - Trim
   - Enum
   - Regex
@@ -69,7 +69,7 @@ New entities: person, cities, countries, organizations
 
 ...
 
-### Global Entities
+#### Global Entities
 
 Colors, etc.
 
@@ -77,19 +77,19 @@ Map data to global entities
 
 ...
 
-### Language Switching
-
-... Share screenshot ...
-
-...
-
 ### Action Types
 
 Logic type
 Dialog type
-  Reuse entities values in answers @number (in utterance); {{ number }} (in answer)
+Reuse entities values in answers @number (in utterance); {{ number }} (in answer)
 
 Variables in the NLU
+...
+
+### Language Switching
+
+... Share screenshot ...
+
 ...
 
 ### Introducing Suggestions
