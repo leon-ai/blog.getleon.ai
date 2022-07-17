@@ -7,7 +7,7 @@ description: TODO...
 
 👋 Hey all, intro...
 
-Create beautiful image to represent this blog post (with same type of color gradient as on the website and "3D" logo)
+[OK] Create beautiful image to represent this blog post (with same type of color gradient as on the website and "3D" logo)
 
 
 ### From Modules to Skills
@@ -40,7 +40,7 @@ Actually, remove it
 
 #### Action Loop
 
-... Create image of how it works under the hood ... Prepare next action in advance and won't quit context as long as in current one
+... Create image of how it works under the hood ... Make use of a loop schema somehow. Prepare next action in advance and won't quit context as long as in current one
 
 ...
 
@@ -108,7 +108,7 @@ Logic: need to be triggered from skill:
 
 ### Resolvers
 
-... Create image of how it works under the hood ...
+... Create image of how it works under the hood ... Split schema in separate models...
 
 Use a separate model...
 
