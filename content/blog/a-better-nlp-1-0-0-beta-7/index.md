@@ -18,7 +18,7 @@ Create beautiful image to represent this blog post (with same type of color grad
 
 #### New Structure
 
-![New skills structure](new-skill-structure.png?v=1)
+![New skills structure](new-skill-structure.png?v=2)
 
 On the core, but also for the skills...
 ...
