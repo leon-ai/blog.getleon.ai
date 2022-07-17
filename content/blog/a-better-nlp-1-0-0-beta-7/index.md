@@ -29,7 +29,7 @@ Can easily access skill memory across other skills...
 
 ### Context Switching
 
-... Create image of how it works under the hood ...
+... Create image of how it works under the hood ... Small timeline showing classifications prioritization with newly set context and hold entities, so can omit required entities
 
 Classification prioritization belonging to the same domain first
 
@@ -38,7 +38,13 @@ Actually, remove it
 
 ...
 
-### Slot Filling
+#### Action Loop
+
+... Create image of how it works under the hood ... Prepare next action in advance and won't quit context as long as in current one
+
+...
+
+#### Slot Filling
 
 ![Slot filling](slot-filling.png)
 
@@ -46,9 +52,18 @@ Actually, remove it
 
 ### A More Powerful NER
 
-... Create image of the different levels of entities ...
+![A more powerful NER](more-powerful-ner.png)
 
-Leon has a custom TCP server and TCP client to be able to do IPC (Inter-Process Communication).
+Entities
+- Built in (Microsoft) https://www.npmjs.com/package/@microsoft/recognizers-text-suite
+- spaCy
+- Custom
+  - Trim
+  - Enum
+  - Regex
+- Global
+
+Leon has a custom TCP server and TCP client to be able to do IPC (Inter-Process Communication). Split spaCy location into cities and countries
 In our case, spaCy. Makes use of PyTorch?
 New entities: person, cities, countries, organizations
 
@@ -65,12 +80,6 @@ Map data to global entities
 ### Language Switching
 
 ... Share screenshot ...
-
-...
-
-### Action Loop
-
-... Create image of how it works under the hood ...
 
 ...
 
