@@ -204,13 +204,23 @@ Use their own NLP model.
 
 ### Traceback from Skills to Core
 
-Easier for skills developers...
-Don't kill the main process when an error is occurring from a skill...
-Auto enable a debug output on print from skills...
+So far, when a code issue happened at the skill level, Leon was exiting his main process. And yes, it was frustrating for skill developers, and also for Leon owners if the call stack was reaching these scopes.
+
+Now this has been fixed and the main process won't be killed when an error occurs from a skill. It'll be way easier for skill developers to build new skills without restarting the Leon main process.
+
+And if an error occurs, it will now return the full traceback so it's easier to spot and fix:
+
+![Traceback](traceback.png)
+
+Also, a debug mode is automatically triggered once skill developers prints directly on the child process output from skills so it's easier to see what's going on.
+
+![Debug](debug.png)
 
 ### New Skills
 
-Basically to apply a real world use case into these newly introduced concepts...
+Basically to apply these new concepts to real world use cases, new skills needed to be made. These skills aren't very important, but the concepts of the core and what's coming next are.
+
+These new skills are: Akinator, Rock Paper Scissors, Color, MBTI. And some already-existing skills got some twists as per the new features.
 
 ### What's Next?
 
@@ -315,3 +325,5 @@ Ah I almost forgot... At the moment only the web app is available, but later ima
 For the mobile app, I'll probably go with React Native to stay somehow consistent between the Android and iOS version and also with the whole Leon stack.
 
 Oh boy, so many things to think of!
+
+Going to kick off the TypeScript rewrite, see ya!
