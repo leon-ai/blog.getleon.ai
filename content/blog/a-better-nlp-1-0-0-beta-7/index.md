@@ -1,5 +1,5 @@
 ---
-title: A Better NLP - 1.0.0-beta.7
+title: A Better NLP and Future - 1.0.0-beta.7
 date: 2022-08-14
 author: Louis Grenard
 description: Huge changes are coming up on Leon, especially the new NLP capabilities. Let's dive together about what are they and why.
@@ -84,13 +84,13 @@ Each skill also contains a "skill.json" file. This file helps to describe a skil
 }
 ```
 
-Do you foresee where we are heading to here? As the community grows, a skills platform (like a registry) containing all skills to be downloaded and so one will be necessary. Perhaps a skills manager/installer like pip or npm too...
+Do you foresee where we are heading to here? As the community grows, a skills platform (like a registry) containing all skills to be downloaded and so on will be necessary. Perhaps a skills manager/installer like pip or npm too...
 
 ##### Skills Memory Sharing
 
-As skills codebase is completely isolated from each other, so is their memory. But it is also possible to access skill memory across skills now!
+As skills codebase are completely isolated from each other, so is their memory. But it is also possible to access skill memory across skills now!
 
-There are many scenarios where we want a skill from a completely different domain hold data, and be able to consume these data from another skill.
+There are many scenarios where we want a skill hold some data and be able to consume these data from another skill from a completely different domain.
 
 ![New skills structure](new-skill-structure.png?v=3)
 
@@ -218,41 +218,91 @@ With such NLP foundations, we will be able to imagine and realize an infinity of
 
 New core features still need to see the light of day to have a decent personal assistant
 
-Thanks to this core, I'll be focusing on making it easier for skills developers to extend Leon. The next big milestones before the official release will be:
+Thanks to this core, I'll be focusing on making it easier for skills developers to extend Leon. The next major milestones before the official release will be:
 
 #### 1. TypeScript Rewrite
 
-...
+Leon's codebase keeps growing and it's not going to stop anytime soon. When I started to build Leon at the first place (late 2017), I was afraid to use TypeScript because I thought it would prevent some people to contribute to the core as TypeScript wasn't as well adopted as it is today. Now is the time!
 
 #### 2. Python SDK
 
-...
+To help skill developers to build new skills, an SDK needs to be built. Currently it uses some kind of helper functions to access memories, return response, etc. But as the community grows, defining a proper standard and a clean SDK will help to be more productive and organized when building skills.
 
 #### 3. JavaScript Bridge and TypeScript SDK
 
-...
+Today it is only possible to build new skills with Python. But I want that many developers or even hobbyist developers can build new skills that fit their own specific needs. Also it has been requested several times by the community, so the need is there.
+
+Same as for Python, a TypeScript SDK will be built. This SDK will follow the same standards as the Python SDK.
+
+When building a new skill, it'll be up to developers to choose whether they want to use Python or TypeScript.
 
 #### 4. Widgets
 
-...
+Currently Leon can use some HTML as output for his answers. Well, this needs to be standardized too!
+
+By making use of the SDKs, it'll be possible for Leon to return some chunks of UI divided into UI components. Imagine a Forecast skill where you see a widget containing the weather for each day of your week. We can think of a Card, Button, Icon, Image, Chart, etc. components. I started to brainstorm on [this roadmap card](https://trello.com/c/g4L8Fivr/424-%E2%9C%A8-100-beta11-introducing-widgets).
+
+It can look similar as this:
+
+![Forecast widget](forecast-widget.png)
 
 #### 5. Mini Apps
 
-...
+I want to go even further than widgets.
+
+Widgets are good to return chunks of UI based on some utterances we may tell to Leon. But what if a skill needs a dedicated UI not necessary triggered by utterances? An utterance may be too long to speak or write, so what if we can grab a mini app on demand? Such as:
+
+```
+Leon, grab the budget tracker skill.
+OR
+Leon, grab the budget tracker mini app.
+OR a simple shortcut on the client (web app, mobile, etc.)
+```
+
+Then this will open a mini app in full screen with its own UI. The UI will still follow specific design guidelines exposed by SDKs so it will be consistent across all mini apps. Then we could browse and see charts of our expenses per category, etc. like on a classic app. But this app will be very easy to build as it extends from the core and SDKs of Leon! Skill developers just need to focus on the business logic, nothing more.
+
+But we may think of why not simply use existing applications out there? Well, I'd say that one of the ultimate purpose of Leon is to centralize everything into one place. By "everything" I mostly mean our data. Doing so will also help to create very interesting scenarios among skills and also preserve our privacy. Use your imagination. It may be a long road, but we have to go through this.
+
+The UI will use the skill memory to fetch/push data. And the same data can be consumed by actions of the skill. It's up to the skill developer to expose these data over the NLU entry.
+
+Simple mini apps can also be made, such as "Roll Dices" or "Flip Coin" mini apps. The Leon server can host a Three.js version that can be consumed to build such small mini apps and display some rolling dices.
+
+At the moment I think I will go for React for widgets and mini apps. So it will be consistent with the upcoming mobile app as it will be based on React Native.
+
+I started to brainstorm on [this roadmap card](https://trello.com/c/SMCjN5GP/425-%E2%9C%A8-100-beta12-introducing-mini-apps).
 
 #### 6. Languages Scaling
 
-...
+This one is tricky in my opinion. We already have several people who are willing to contribute to support more languages, which is awesome.
+
+But maybe some skills will not support some languages. Or maybe we need to define ahead what languages have to be supported to consider a skill completed. The thing is that to support new languages it's not only about translating utterance samples and answers. It also needs to review  and define the whole NLU configuration of a skill, especially to spot some specific custom entities in an utterance.
+
+Maybe some tooling will need to be made to help with that. Like some offline auto translation and so one. Let's see. But yeah, that part is very important too.
+
+A lot of "maybes" here because this part is still obscure.
 
 #### 7. New STT/TTS Offline and Cloud Solutions
 
-...
+The voice technology field has evolved a lot over the last few years. A lot of new offline solutions came up. So implementing new solutions is a must here so we can choose which ones fit the best for us. Still by prioritizing offline solutions to respect our privacy.
+
+Ah and a new solution for the wake word is necessary too! I heard you.
 
 #### 8. Skills Platform
 
-...
+I mentioned this one earlier. It has also been suggested by a community member.
+
+At that time, the official release will be very close. So it'll be time to grow Leon capabilities by developing many skills. To do so, the community needs to be involve, so it would be nice to have a platform to centralize all skills that can be downloaded or being developed or waiting to be developed.
+
+For skills that are available, we will have 3 types:
+- Official: maintained by the Leon AI core Team.
+- Trusted: created by the community, but approved by the Leon AI core Team.
+- Unofficial: hasn't been reviewed.
+
+This platform will also help to bring the community together.
 
 ### Important Notes
+
+Something else I'll need to take a look at is to support Leon on single-board computers such as Raspberry Pis. This has been requested a lot, and the need is for sure existing. Same as for the IoT part (this one will be after the official release though).
 
 Until the official release, I do not recommend new contributions as the whole architecture is constantly being revisited.
 
