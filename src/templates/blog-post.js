@@ -29,7 +29,7 @@ const BlogPostTemplate = ({ data, location }) => {
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p className="post-data">
-            <img src={authorImg} alt={post.frontmatter.author} /> {post.frontmatter.author} / {post.frontmatter.date}
+            <img src={authorImg} alt={post.frontmatter.author} /> {post.frontmatter.author} • {post.frontmatter.date}
           </p>
         </header>
         <hr />
@@ -67,7 +67,7 @@ const BlogPostTemplate = ({ data, location }) => {
         </div>
         <br />
         <p>Cheers <span role="img" aria-label="Cocktail">🍹</span>,</p>
-        <p><em>{post.frontmatter.author.split(' ')[0]}</em>.</p>
+        <p><em>{post.frontmatter.author.split(' ')[0]}</em></p>
       </article>
       <nav className="blog-post-nav">
         <ul
