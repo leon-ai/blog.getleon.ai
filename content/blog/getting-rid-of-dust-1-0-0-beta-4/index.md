@@ -1,5 +1,5 @@
 ---
-title: Getting Rid of Dust / 1.0.0-beta.4
+title: Getting Rid of Dust - 1.0.0-beta.4
 date: 2021-05-01
 author: Louis Grenard
 description: After 2 years, a new release is finally out... Learn about the main focus of this release and what it contains.
