@@ -1,6 +1,6 @@
 ---
 title: A Better NLP and Future - 1.0.0-beta.7
-date: 2022-08-14
+date: 2022-08-15
 author: Louis Grenard
 description: Huge changes are coming up on Leon, especially the new NLP capabilities. Let's dive together about what are they and why.
 ---
@@ -60,9 +60,9 @@ This is such an important feature as Leon uses it to understand in what context 
 
 With the legacy packages/modules structure, they were no specific boundaries of how we define a package. Should we create a new package? Create a module in a particular package? For example, we had the Calendar package that included the Todo List module. But why a Calendar package? When module developers wanted to create a new skill, we often needed to discuss about where the module should be added. It wasn't clear.
 
-Now it is pretty straight forward. A skill contains its own code base and does not share the NLU configuration (utterance samples, actions list, etc.) with any other skills as it was before with modules.
+Now it is pretty straight forward. A skill contains its own codebase and does not share the NLU configuration (utterance samples, actions list, etc.) with any other skills as it was before with modules.
 
-Each skill has its own isolated codebase now. So skill developers can be completely independent when building skills without to worry of messing up other skills.
+Each skill has its own isolated codebase now. So skill developers can be completely independent when building skills without to worry about messing up other skills.
 
 ![Skill structure](skill-structure.png)
 
@@ -171,6 +171,7 @@ On slot level...
 
 Dialog + slots: show automatically
 Logic: need to be triggered from skill:
+
   - showNextActionSuggestions (next action)
   - showSuggestions (current action)
 
@@ -178,29 +179,100 @@ Logic: need to be triggered from skill:
 
 ### Resolvers
 
-... Create image of how it works under the hood ... Split schema in separate models...
+I'm excited to introduce revolvers.
 
-Use a separate model...
+You can see resolvers as utterance samples that are converted (resolved) to a value of your choice.
 
-...
+They are very handy when skills expect specific utterances and then according to these utterances attribute a value that can be handled by the skill.
+
+If a skill action expects to receive a resolver, then Leon will convert the value for you and this value will be usable from the skill action code. Any value can be passed to resolvers which allow a large possibilities of usages.
+
+There are two types of resolvers. Let's take a look.
 
 #### Global Resolvers
 
-Use their own NLP model.
+![Global resolver](global-resolvers.png)
 
-...
+Global resolvers are the ones used for common purposes so they can easily be reused by skills. They are defined at a high level in the Leon's structure.
+
+For example, the purpose of the "affirmation_denial" resolver is to affirm or deny something, just a "yes" or "no" question. Like "Would you try again?", such case is very common, therefore this global resolver exists and can easily be used by skills.
+
+It looks like this (it is longer in reality):
+
+```json
+{
+  "name": "affirmation_denial",
+  "intents": {
+    "affirmation": {
+      "utterance_samples": [
+        "Yes",
+        "Alright",
+        "Do [it|this|that]",
+      ],
+      "value": true
+    },
+    "denial": {
+      "utterance_samples": [
+        "No",
+        "Stop it",
+        "Please don't",
+      ],
+      "value": false
+    }
+  }
+}
+```
+
+In the skill NLU configuration we can set such resolver at the skill action level via the following:
+
+```json
+"retry": {
+  "type": "logic",
+  "loop": {
+    "expected_item": {
+      "type": "global_resolver",
+      "name": "affirmation_denial"
+    }
+  }
+}
+```
+
+Global resolvers have their own NLP model to not have any conflict with the main NLP model which contains skills intents. This type of resolvers is classified within a special NLP domain called "system" so Leon can recognize they are a special case somehow.
 
 #### Skill Resolvers
 
-Use their own NLP model.
+![Skill resolver](skill-resolvers.png)
 
-...
+Skill resolvers are the same as global resolvers except that they are located at the skill level. They also have their own NLP model but they are classified in the same domain as the skill they live in.
+
+These resolvers are specific to skills and cannot be reused by other skills.
+
+For example, the MBTI skill which provides a quiz to know your personality type relies on a skill resolver. This resolver contains forty intents. Each intent represents a choice of the quiz and is identified by a value such as "1_b" for "the first question, choice B".
+
+So the "1_b" value can be manipulated from the skill action.
 
 ### Cartesian Training Samples
 
-... Provide examples ...
+To train the main NLP model, we need to provide utterance samples for each action of all skills. However, sometimes it can be redundant to have some sort of repetitions in our utterance samples.
 
-...
+Let's take an example. To train the "add todos" action of our Todo List skill, we can have the following samples:
+
+```json
+"utterance_samples": [
+  "Add potatoes to the groceries list",
+  "Add potatoes to my groceries list",
+  "Append potatoes to the groceries list",
+  "Append potatoes to my groceries list"
+]
+```
+
+This is somehow redundant. So now it is possible to provide the same result within one line:
+
+```json
+"utterance_samples": [
+  "[Add|Append] potatoes to [the|my] groceries list"
+]
+```
 
 ### Traceback from Skills to Core
 
@@ -220,13 +292,13 @@ Also, a debug mode is automatically triggered once skill developers prints direc
 
 Basically to apply these new concepts to real world use cases, new skills needed to be made. These skills aren't very important, but the concepts of the core and what's coming next are.
 
-These new skills are: Akinator, Rock Paper Scissors, Color, MBTI. And some already-existing skills got some twists as per the new features.
+These new skills are: Akinator, Rock Paper Scissors, Guess the Number, Color, MBTI. And some already-existing skills got some twists as per the new features.
 
 ### What's Next?
 
 With such NLP foundations, we will be able to imagine and realize an infinity of skills. Such expendable architecture is one of the main strength of Leon since day one.
 
-New core features still need to see the light of day to have a decent personal assistant
+New core features still need to see the light of day to have a decent personal assistant.
 
 Thanks to this core, I'll be focusing on making it easier for skills developers to extend Leon. The next major milestones before the official release will be:
 
@@ -285,15 +357,15 @@ I started to brainstorm on [this roadmap card](https://trello.com/c/SMCjN5GP/425
 
 This one is tricky in my opinion. We already have several people who are willing to contribute to support more languages, which is awesome.
 
-But maybe some skills will not support some languages. Or maybe we need to define ahead what languages have to be supported to consider a skill completed. The thing is that to support new languages it's not only about translating utterance samples and answers. It also needs to review  and define the whole NLU configuration of a skill, especially to spot some specific custom entities in an utterance.
+But maybe some skills will not support some languages. Or maybe we need to define ahead what languages have to be supported to consider a skill completed. The thing is that to support new languages it's not only about translating utterance samples and answers. It also needs to review and define the whole NLU configuration of a skill, especially to spot some specific custom entities in an utterance.
 
-Maybe some tooling will need to be made to help with that. Like some offline auto translation and so one. Let's see. But yeah, that part is very important too.
+Maybe some tooling will need to be made to help with that. Like some offline auto translation and so on. Let's see. But yeah, this part is very important too.
 
 A lot of "maybes" here because this part is still obscure.
 
 #### 7. New STT/TTS Offline and Cloud Solutions
 
-The voice technology field has evolved a lot over the last few years. A lot of new offline solutions came up. So implementing new solutions is a must here so we can choose which ones fit the best for us. Still by prioritizing offline solutions to respect our privacy.
+The voice technology field has evolved a lot over the last few years. A lot of new offline solutions came up. So implementing new solutions is a must here so we can choose which ones fit the best. Still by prioritizing offline solutions to respect our privacy.
 
 Ah and a new solution for the wake word is necessary too! I heard you.
 
@@ -301,7 +373,7 @@ Ah and a new solution for the wake word is necessary too! I heard you.
 
 I mentioned this one earlier. It has also been suggested by a community member.
 
-At that time, the official release will be very close. So it'll be time to grow Leon capabilities by developing many skills. To do so, the community needs to be involve, so it would be nice to have a platform to centralize all skills that can be downloaded or being developed or waiting to be developed.
+At that time, the official release will be very close. So it'll be time to grow Leon capabilities by developing many skills. To do so, the community needs to be involved, so it would be nice to have a platform to centralize all skills that can be downloaded or being developed or waiting to be developed.
 
 For skills that are available, we will have 3 types:
 - Official: maintained by the Leon AI core Team.
