@@ -158,9 +158,9 @@ Variables in the NLU
 
 ### Language Switching
 
-... Share screenshot ...
+![Language switching](language-switching.png)
 
-...
+Leon is now capable of detecting a language and switches from one language to another without restarting himself.
 
 ### Introducing Suggestions
 
