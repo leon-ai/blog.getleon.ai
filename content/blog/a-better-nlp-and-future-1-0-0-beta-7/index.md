@@ -164,18 +164,17 @@ Variables in the NLU
 
 ### Introducing Suggestions
 
-... Share screenshot ...
+![Suggestions](suggestions.png)
 
-On action level...
-On slot level...
+When creating skills, skill developers can add suggestions at the actions level and at the slots level.
 
-Dialog + slots: show automatically
-Logic: need to be triggered from skill:
+Suggestions are a simple way to suggest Leon owners what can be answered next. Owners can simply click or tap to reply.
 
-  - showNextActionSuggestions (next action)
-  - showSuggestions (current action)
+On a skill with a dialog type, if suggestions are added in a slot, then they will show up automatically.
 
-...
+For logic skills type, suggestion can be added at the action and slot level, but they have to be triggered from the action code via the "showNextActionSuggestions" (show suggestions of the next action) or "showSuggestions" (show suggestions of the current action) options.
+
+Don't worry, a better explanation will come up with the documentation before the official release. Just know that suggestions exist.
 
 ### Resolvers
 
