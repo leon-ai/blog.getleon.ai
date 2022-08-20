@@ -106,6 +106,8 @@ Add bread to the shopping list; Actually, remove it
 
 And reduce conflicts of executing skill actions that belongs to other domains
 
+"next_action"
+
 ...
 
 #### Action Loop
@@ -193,7 +195,7 @@ Let's say we have 3 actions within the Color skills:
 - why: Leon justifies why it is his favorite color.
 - color_hexadecimal: Leon tells you about the hexadecimal code of a color.
 
-As the NLU configuration, we can think of something similar:
+For the NLU configuration, we can consider this:
 
 ```json
 {
@@ -241,8 +243,6 @@ As the NLU configuration, we can think of something similar:
 }
 ```
 
-
-
 All of this without writing a single line of code!
 
 And our global entity "color" file can look like this:
@@ -270,28 +270,41 @@ And our global entity "color" file can look like this:
     }
   }
 }
-
 ```
 
+On the dialog type, if an utterance uses an entity, Leon is smart enough to reply automatically with an answer that includes your entity value if he wants to. For example:
 
+```
+I love the @color color, how about you?
+```
+
+`@color` is the entity, and let's say it has the `blue` value. Then Leon will reply either:
+
+```
+Sometimes %blue_leon%, sometimes %pink_leon%.
+```
+
+Either:
+
+```
+{{ color }} is great! But I prefer blue and pink.
+```
+
+`{{ color }}` will be replaced by `red`.
+
+The entity can be any type of entity, it can be a global one, or a built-in one such as `@number`, `@date`, or a custom one, etc.
+
+However, if you don't give any entity in the utterance, Leon will reply with a sentence that does not include the entity. Which is pretty normal right?
+
+Also, have you noticed the new variables feature here? You can now specify some variables in your NLU configuration to avoid repetitions.
+
+After Leon tells you about his favorite color, you can ask why he likes this color. Then as there is a "why" action within this skill, thanks to the context, Leon will understand that you are asking why he likes these colors and not let's say... Why he likes to eat chocolate... Once again, context here is really helpful. It gives the possibility to create such dialogs.
+
+In our color global entity file, you can see that we can hold some custom data. In our case the hexadecimal code for each colors. In that way, you can reuse these data within your NLU configuration by using the following format: `{{ color.hexa }}`. This very handy and you can think of any kind of data here. Remember, imagination is the only limit!
 
 #### Logic Type
 
 There is no much to say for this type. It is the same as we already know so far. It runs the business logic implemented in actions via code.
-
-- dialog: used when no real business logic 
-- logic: ...
-
-What if I tell you that it is now possible to create skill actions without code? Just with some configurations.
-
-Indeed, until now to create an action it was necessary to implement code
-
-Logic type
-Dialog type
-Reuse entities values in answers @number (in utterance); {{ number }} (in answer)
-
-Variables in the NLU
-...
 
 ### Language Switching
 
