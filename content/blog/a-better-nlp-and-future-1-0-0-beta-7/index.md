@@ -126,28 +126,39 @@ And reduce conflicts of executing skill actions that belongs to other domains
 
 ![A more powerful NER](more-powerful-ner.png)
 
-Entities
-- Built in (Microsoft) https://www.npmjs.com/package/@microsoft/recognizers-text-suite
-- spaCy
-- Custom (scoped in the skill action)
-  - Trim
-  - Enum
-  - Regex
-- Global
+Still in the purpose of improving the NLP of Leon, NER (*Natural Entity Recognition*) plays a big part here. It is what helps Leon to identity/target specific information we provide such as a location, date, duration and so on...
 
-Leon has a custom TCP server and TCP client to be able to do IPC (Inter-Process Communication). Split spaCy location into cities and countries
-In our case, spaCy. Makes use of PyTorch?
-New entities: person, cities, countries, organizations
+I worked in improving the NER by adding two new group of entities: global entities and spaCy entities. In this way Leon's NER contains a total of four groups:
 
-...
+#### Built-In
 
-#### Global Entities
+This group already existed, it is based on the [Microsoft recognizers](https://www.npmjs.com/package/@microsoft/recognizers-text-suite). It helps to understand daily entities such as dimensions, emails, numbers. etc. They don't require any settings in skills NLU configurations, Leon naturally understands them.
 
-Colors, etc.
+#### Custom
 
-Map data to global entities
+This group contains 3 types:
 
-...
+- Trim: you can pick up a data from an utterance by clearly defining conditions. E.g. pick up what is after the last "with" word of the utterance.
+- Regex: you can create an entity based on a regex.
+- Enum: define a bag of words and synonyms that should match your new entity.
+
+#### Global
+
+This new group of entities are the one that can be reused among skills and you can define. A good example here is a color entity that can be defined as global. Because such entity can for sure be reused in other skills. It is not specific to a skill. So other skill developers can use your global entity to also fulfill their needs.
+
+Global entities can hold data that can directly be reused in skills. You can see an example by reading further.
+
+At the moment, global entities only support the enum type. Let's see if other types should be supported in the future.
+
+#### spaCy
+
+I wanted Leon be able to recognize new types of entities such as: person names, cities, countries and organizations.
+
+To do so, I created a TCP server and a TCP client to be able to do IPC (*Inter-Process Communication*) between spaCy model which uses a layer of Python and the core of Leon which uses Node.js.
+
+spaCy entities are naturally understood by Leon, no NLU configuration is needed too.
+
+Moreover, these TCP instances can be helpful for the future of Leon if we need to add other layers to Leon that runs in separate processes.
 
 ### Action Types
 
@@ -546,5 +557,12 @@ Ah I almost forgot... At the moment only the web app is available, but later ima
 For the mobile app, I'll probably go with React Native to stay somehow consistent between the Android and iOS version and also with the whole Leon stack.
 
 Oh boy, so many things to think of!
+
+Meanwhile, you can try Leon within two command lines:
+
+```bash
+npm install --global @leon-ai/cli
+leon create birth
+```
 
 Going to kick off the TypeScript rewrite, see ya!
