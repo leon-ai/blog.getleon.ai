@@ -9,4 +9,4 @@ import './src/normalize.sass'
 import './src/style.sass'
 
 // Highlighting for code blocks
-import 'prismjs/themes/prism-okaidia.css'
+import 'prismjs/themes/prism-tomorrow.min.css'

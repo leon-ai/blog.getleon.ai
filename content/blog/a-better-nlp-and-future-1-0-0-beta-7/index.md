@@ -149,6 +149,143 @@ Map data to global entities
 
 ### Action Types
 
+Some skills don't actually need code to run. For example, at present if we use code for the Good Bye skill, the main action would look like this:
+
+```python
+import utils
+
+def run(params):
+	"""Leon says good bye"""
+
+	return utils.output('end', 'good_bye')
+```
+
+So here Leon actually just answers without any business logic. Hence the introduction of action types.
+
+From now on each action is defined with a *dialog* or *logic* type.
+
+#### Dialog Type
+
+The dialog type is perfect to be used when no real business logic needs to be executed.
+
+For example, the Good Bye skill simply uses the NLU configuration without any code written:
+
+```json
+"actions": {
+  "run": {
+    "type": "dialog",
+    "utterance_samples": [
+      "Bye",
+      "See you later"
+    ],
+    "answers": [
+      "Bye! Enjoy your time!"
+    ]
+  }
+}
+```
+
+Leon will automatically pick up an answer from this action when the Good Bye skill is triggered. It is also possible to create dialogs with this type. Let's take an example with a Color skill.
+
+Let's say we have 3 actions within the Color skills:
+
+- favorite_color: Leon tells about his favorite color.
+- why: Leon justifies why it is his favorite color.
+- color_hexadecimal: Leon tells you about the hexadecimal code of a color.
+
+As the NLU configuration, we can think of something similar:
+
+```json
+{
+  "variables": {
+    "blue_leon": "#1C75DB",
+    "pink_leon": "#ED297A"
+  },
+  "actions": {
+    "favorite_color": {
+      "type": "dialog",
+      "utterance_samples": [
+        "What is your favorite color?",
+        "I love the @color color, how about you?"
+      ],
+      "answers": [
+        "Sometimes %blue_leon%, sometimes %pink_leon%.",
+        "{{ color }} is great! But I prefer blue and pink."
+      ]
+    },
+    "why": {
+      "type": "dialog",
+      "utterance_samples": [
+        "Why?"
+      ],
+      "answers": [
+        "Because blue and pink are beautiful. Look at my logo..."
+      ]
+    },
+    "color_hexadecimal": {
+      "type": "dialog",
+      "utterance_samples": [
+        "Give me the hexadecimal code of the @color color"
+      ],
+      "answers": [
+        "Alright, here is for the {{ color }} color: {{ color.hexa }} <div style=\"background:{{ color.hexa }};display:inline-block;width:12px;height:12px;border-radius:50%;\"></div>."
+      ],
+      "unknown_answers": [
+        "This color must look incredible, but I haven't seen it before."
+      ]
+    }
+  },
+  "entities": {
+    "color": "global-entities/color.json"
+  }
+}
+```
+
+
+
+All of this without writing a single line of code!
+
+And our global entity "color" file can look like this:
+
+```json
+{
+  "options": {
+    "blue": {
+      "synonyms": ["blue"],
+      "data": {
+        "hexa": ["#0000FF"]
+      }
+    },
+    "gray": {
+      "synonyms": ["gray", "grey"],
+      "data": {
+        "hexa": ["#808080"]
+      }
+    },
+    "pink": {
+      "synonyms": ["pink"],
+      "data": {
+        "hexa": ["#FFC0CB"]
+      }
+    }
+  }
+}
+
+```
+
+
+
+#### Logic Type
+
+There is no much to say for this type. It is the same as we already know so far. It runs the business logic implemented in actions via code.
+
+- dialog: used when no real business logic 
+- logic: ...
+
+What if I tell you that it is now possible to create skill actions without code? Just with some configurations.
+
+Indeed, until now to create an action it was necessary to implement code
+
 Logic type
 Dialog type
 Reuse entities values in answers @number (in utterance); {{ number }} (in answer)
