@@ -58,9 +58,9 @@ The main NLP model is trained by domains which allow to classify skills by parti
 
 This is such an important feature as Leon uses it to understand in what context he is currently in and then better prioritize following intents. Yes Leon has such capabilities now! You can read further to know more.
 
-With the legacy packages/modules structure, they were no specific boundaries of how we define a package. Should we create a new package? Create a module in a particular package? For example, we had the Calendar package that included the Todo List module. But why a Calendar package? When module developers wanted to create a new skill, we often needed to discuss about where the module should be added. It wasn't clear.
+With the legacy packages/modules structure, they were no specific boundaries of how we define a package. Should we create a new package? Create a module in a particular package? For example, we had the Calendar package that included the Todo List module. But why a Calendar package? When module developers wanted to create a new skill, we often needed to discuss about where it should be added. It wasn't clear.
 
-Now it is pretty straight forward. A skill contains its own codebase and does not share the NLU configuration (utterance samples, actions list, etc.) with any other skills as it was before with modules.
+Now it is pretty straight forward. A skill contains its own codebase and does not share the skill configuration (utterance samples, actions list, etc.) with any other skills as it was before with modules.
 
 Each skill has its own isolated codebase now. So skill developers can be completely independent when building skills without to worry about messing up other skills.
 
@@ -88,25 +88,57 @@ Do you foresee where we are heading to here? As the community grows, a skills pl
 
 ##### Skills Memory Sharing
 
+![New skills structure](new-skill-structure.png?v=3)
+
 As skills codebase are completely isolated from each other, so is their memory. But it is also possible to access skill memory across skills now!
 
-There are many scenarios where we want a skill hold some data and be able to consume these data from another skill from a completely different domain.
-
-![New skills structure](new-skill-structure.png?v=3)
+There are many scenarios where we want a skill hold some data and be able to consume these data from another skill of a different domain.
 
 ### Context Switching
 
-Don't create image here... Create image of how it works under the hood ... Small timeline showing classifications prioritization with newly set context and hold entities, so can omit required entities
+.....................TODO: image
 
-A context is identified by a domain + skill name.
+Create image of how it works under the hood ... Small timeline showing classifications prioritization with newly set context and hold entities, so can omit required entities
+
+
+
+
+
+This is the most important improvement for the Leon's NLP. Introducing contexts makes Leon smarter and allow to do slot filling, prioritize classifications, build skills for natural conversations, etc. Contexts are the foundation of many aspects of Leon NLP capabilities.
+
+A context is identified by a domain + a skill name. Each context holds several kind of data that come along conversations such as entities, slots, etc.
+
+For us humans, It's very natural to understand contexts. If you speak about a blue color out of context, then what does it mean? Is it the color of a t-shirt, a car, a light? And why are we suddenly speaking about the blue color? Well, we know that thanks to contexts.
+
+Shortly speaking, for Leon, when a skill action is triggered, he will set the current context based on the domain of the skill and the name of the skill.
+
+When another action of the same skill is triggered, Leon knows we are in the same context. However, when an action from another skill is triggered, Leon will switch the context and understands he no longer uses the same set of data belonging to the previous context. But if the context is still the same domain, then Leon can prioritize intents better.
+
+This can allow new capabilities.
+
+I also implemented a contexts queue so in the future we can build deeper meaningful features based on previous contexts. Imagine what it would be possible to do if skills can access this contexts queue...
+
+
+
+......................TODO:
 
 Classification prioritization belonging to the same domain first. It helps with 2 (or 4?) things:
 
 Add bread to the shopping list; Actually, remove it
 
-And reduce conflicts of executing skill actions that belongs to other domains
+As you can see on the image above, "Remove it" is a pretty common thing that can be used in many other skills. But thanks to contexts, Leon knows it actually means to remove the todo from the list and not something else. So utterance samples can be very general and not too specific and Leon will still understand according to contexts.
 
-"next_action"
+So contexts also help to reduce conflicts of executing skill actions that belong to other domains.
+
+
+
+
+
+
+
+"next_action" is useful when a skill needs to follow a specific order of actions. It will help Leon to foresee and prepare for what's coming next. I will not go into details here as I don't think it is very relevant. Just understand that it helps to connect actions in a specific order to feed the context with data. Like you are creating a conversation flow. Okay, at least let's go for a simple example:
+
+Example...
 
 ...
 
@@ -116,7 +148,7 @@ And reduce conflicts of executing skill actions that belongs to other domains
 
 ...
 
-#### Slot Filling
+### Slot Filling
 
 ![Slot filling](slot-filling.png)
 
@@ -130,11 +162,11 @@ Still in the purpose of improving the NLP of Leon, NER (*Natural Entity Recognit
 
 I worked in improving the NER by adding two new group of entities: global entities and spaCy entities. In this way Leon's NER contains a total of four groups:
 
-#### Built-In
+#### Built-In Entities
 
-This group already existed, it is based on the [Microsoft recognizers](https://www.npmjs.com/package/@microsoft/recognizers-text-suite). It helps to understand daily entities such as dimensions, emails, numbers. etc. They don't require any settings in skills NLU configurations, Leon naturally understands them.
+This group already existed, it is based on the [Microsoft recognizers](https://www.npmjs.com/package/@microsoft/recognizers-text-suite). It helps to understand daily entities such as dimensions, emails, numbers. etc. They don't require any settings in skills configuration, Leon naturally understands them.
 
-#### Custom
+#### Custom Entities
 
 This group contains 3 types:
 
@@ -142,21 +174,21 @@ This group contains 3 types:
 - Regex: you can create an entity based on a regex.
 - Enum: define a bag of words and synonyms that should match your new entity.
 
-#### Global
+#### Global Entities
 
-This new group of entities are the one that can be reused among skills and you can define. A good example here is a color entity that can be defined as global. Because such entity can for sure be reused in other skills. It is not specific to a skill. So other skill developers can use your global entity to also fulfill their needs.
+This new group of entities are the one that can be reused among skills. And you can define them! A good example here is a color entity that can be defined as global. Because such entity can for sure be reused in other skills. It is not specific to a skill. So other skill developers can use your global entity to also fulfill their needs.
 
 Global entities can hold data that can directly be reused in skills. You can see an example by reading further.
 
 At the moment, global entities only support the enum type. Let's see if other types should be supported in the future.
 
-#### spaCy
+#### spaCy Entities
 
-I wanted Leon be able to recognize new types of entities such as: person names, cities, countries and organizations.
+I wanted Leon to be able to recognize new types of entities such as: person names, cities, countries and organizations.
 
-To do so, I created a TCP server and a TCP client to be able to do IPC (*Inter-Process Communication*) between spaCy model which uses a layer of Python and the core of Leon which uses Node.js.
+To do so, I created a TCP server and a TCP client to allow IPC (*Inter-Process Communication*) between spaCy model which uses a layer of Python and the core of Leon which uses Node.js.
 
-spaCy entities are naturally understood by Leon, no NLU configuration is needed too.
+spaCy entities are naturally understood by Leon, no skill configuration is needed too.
 
 Moreover, these TCP instances can be helpful for the future of Leon if we need to add other layers to Leon that runs in separate processes.
 
@@ -181,7 +213,7 @@ From now on each action is defined with a *dialog* or *logic* type.
 
 The dialog type is perfect to be used when no real business logic needs to be executed.
 
-For example, the Good Bye skill simply uses the NLU configuration without any code written:
+For example, the Good Bye skill simply uses the skill configuration without any code written:
 
 ```json
 "actions": {
@@ -206,7 +238,7 @@ Let's say we have 3 actions within the Color skills:
 - why: Leon justifies why it is his favorite color.
 - color_hexadecimal: Leon tells you about the hexadecimal code of a color.
 
-For the NLU configuration, we can consider this:
+For the skill configuration, we can consider this:
 
 ```json
 {
@@ -307,11 +339,11 @@ The entity can be any type of entity, it can be a global one, or a built-in one 
 
 However, if you don't give any entity in the utterance, Leon will reply with a sentence that does not include the entity. Which is pretty normal right?
 
-Also, have you noticed the new variables feature here? You can now specify some variables in your NLU configuration to avoid repetitions.
+Also, have you noticed the new variables feature here? You can now specify some variables in your skill configuration to avoid repetitions.
 
 After Leon tells you about his favorite color, you can ask why he likes this color. Then as there is a "why" action within this skill, thanks to the context, Leon will understand that you are asking why he likes these colors and not let's say... Why he likes to eat chocolate... Once again, context here is really helpful. It gives the possibility to create such dialogs.
 
-In our color global entity file, you can see that we can hold some custom data. In our case the hexadecimal code for each colors. In that way, you can reuse these data within your NLU configuration by using the following format: `{{ color.hexa }}`. This very handy and you can think of any kind of data here. Remember, imagination is the only limit!
+In our color global entity file, you can see that we can hold some custom data. In our case the hexadecimal code for each colors. In that way, you can reuse these data within your skill configuration by using the following format: `{{ color.hexa }}`. This very handy and you can think of any kind of data here. Remember, imagination is the only limit!
 
 #### Logic Type
 
@@ -339,7 +371,7 @@ Don't worry, a better explanation will come up with the documentation before the
 
 ### Resolvers
 
-I'm excited to introduce revolvers.
+I'm thrilled to introduce revolvers.
 
 You can see resolvers as utterance samples that are converted (resolved) to a value of your choice.
 
@@ -383,7 +415,7 @@ It looks like this (it is longer in reality):
 }
 ```
 
-In the skill NLU configuration we can set such resolver at the skill action level via the following:
+In the skill configuration we can set such resolver at the skill action level via the following:
 
 ```json
 "retry": {
@@ -517,7 +549,7 @@ I started to brainstorm on [this roadmap card](https://trello.com/c/SMCjN5GP/425
 
 This one is tricky in my opinion. We already have several people who are willing to contribute to support more languages, which is awesome.
 
-But maybe some skills will not support some languages. Or maybe we need to define ahead what languages have to be supported to consider a skill completed. The thing is that to support new languages it's not only about translating utterance samples and answers. It also needs to review and define the whole NLU configuration of a skill, especially to spot some specific custom entities in an utterance.
+But maybe some skills will not support some languages. Or maybe we need to define ahead what languages have to be supported to consider a skill completed. The thing is that to support new languages it's not only about translating utterance samples and answers. It also needs to review and define the whole configuration of a skill, especially to spot some specific custom entities in an utterance.
 
 Maybe some tooling will need to be made to help with that. Like some offline auto translation and so on. Let's see. But yeah, this part is very important too.
 
