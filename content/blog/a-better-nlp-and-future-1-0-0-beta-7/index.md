@@ -114,19 +114,79 @@ This can allow new capabilities.
 
 I also implemented a contexts queue so in the future we can build deeper meaningful features based on previous contexts. Imagine what it would be possible to do if skills can access this contexts queue...
 
-#### Next Action
-
-"next_action" is useful when a skill needs to follow a specific order of actions. It will help Leon to foresee and prepare for what's coming next. I will not go into details here as I don't think it is very relevant. Just understand that it helps to connect actions in a specific order to feed the context with data. Like you are creating a conversation flow. Okay, at least let's go for a simple example:
-
-Example...
-
-...
-
 #### Action Loop
 
-... Create image of how it works under the hood ... Make use of a loop schema somehow. Prepare next action in advance and won't quit context as long as in current one
+The action loop is a concept to keep Leon triggering the same skill action until the logic of the skill breaks the loop based on new utterances. In the skill configuration, you define a loop by telling Leon what item he needs to expect. An item can be a entity or a resolver (keep reading to understand what resolvers are). Leon will keep triggering the same skill action until it breaks.
 
-...
+A loop can break if the action explicitly stops it from the code. Or if the utterance does not contain the expected item, Leon will think you are changing topic and will break the loop by himself.
+
+It may look blurry to say it like that, so let's take an example.
+
+![Action loop](action-loop.png)
+
+Let's say we have a Guess the Number skill where Leon picks up a number and let you guess it. The action configuration can look like this:
+
+```json
+"guess": {
+  "type": "logic",
+  "loop": {
+    "expected_item": {
+      "type": "entity",
+   	  "name": "number"
+    }
+  }
+}
+```
+
+Meaning Leon will trigger the "guess" action on upcoming utterances until the loop breaks. In this example, the loop expects an entity type of number. When the action returns a `isInActionLoop` to `false`, then the loop will break, probably because the Leon owner guessed the number.
+
+#### Next Action
+
+In a skill configuration, the `next_action` property is useful when a skill needs to follow a specific order of actions. It will help Leon to foresee and prepare for what's coming next. I will not go into details here as I don't think it is very relevant. Just understand that it helps to connect actions in a specific order to feed the context with data. Like you are creating a conversation flow.
+
+Because not all actions need to be triggered from utterances. When an action ends, then Leon can be ready for what's coming next and trigger the next action based on the new utterance.
+
+Okay, at least let's go for a simple example. Still with our Guess the Number skill, let's say we have the following configuration:
+
+```json
+{
+  "actions": {
+    "setup": {
+      "type": "logic",
+      "utterance_samples": [
+        "Let's play guess the number",
+        "I wanna play guess the number"
+      ],
+      "next_action": "guess"
+    },
+    "guess": {
+      "type": "logic",
+      "loop": {
+        "expected_item": {
+          "type": "entity",
+          "name": "number"
+        }
+      },
+      "next_action": "replay"
+    },
+    "replay": {
+      "type": "logic",
+      "loop": {
+        "expected_item": {
+          "type": "global_resolver",
+          "name": "affirmation_denial"
+        }
+      }
+    }
+  }
+}
+```
+
+1. We have a `setup` action as the entry point. This is what will start the flow of our conversation. This action contains a `next_action` property with the `guess` value. Meaning Leon will activate the loop inside the `guess` action.
+2. Once the number is found, then Leon will be disposed to trigger the `replay` action.
+3. This `replay` action expects the `affirmation_denial` global resolver, so basically, Leon expects a `yes` or `no` answer (again, I will explain resolvers later in this blog post).
+
+As you can see here only the first action requires utterance samples. Then everything comes up with a flow.
 
 ### Slot Filling
 
