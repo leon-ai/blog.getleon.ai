@@ -192,7 +192,11 @@ As you can see here only the first action requires utterance samples. Then every
 
 ![Slot filling](slot-filling.png)
 
-...
+Depending on how skill developers wants to design their skill, they have the possibility to ask for more information before to get to the meat of the skill. In this way, Leon can gather these information to operate the skill in a complete manner.
+
+On the image above, you can see for the Akinator skill, Leon asks what thematic you want to play with. Then according to the thematic, Leon's friend Akinator, will try to guess within the chosen thematic.
+
+Skill developers can use their imagination to design nice scenario with such features.
 
 ### A More Powerful NER
 
