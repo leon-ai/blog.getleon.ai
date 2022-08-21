@@ -9,7 +9,7 @@ description: Huge changes are coming up on Leon, especially the new NLP capabili
 
 There are so many things I want to share with you right now, that's one of the reasons I started to work on Leon at the first place. Not only to work on the code itself, but also think about the structure of such project as it is scalable, very flexible and build up a whole community around it.
 
-Indeed, before the official release of Leon many things have to be done to make sure that we have a respectable personal assistant who is extended by skills that can cover many scenarios and properly respect our privacy. Hence these new capabilities I will share with you shortly.
+Indeed, before the official release of Leon many things have to be done to make sure that we have a respectable virtual assistant who is extended by skills that can cover many scenarios and properly respect our privacy. Hence these new capabilities I will share with you shortly.
 
 Please get comfy, it may be a bit long for some of us, sorry about that. But I have so many things to share! I tried my best to illustrate with images.
 
@@ -33,7 +33,7 @@ Along with this change, there are also a few other terms that have changed:
 
 - "Query" becomes "utterance". It is what the Leon owner (you, me, anybody who owns a Leon) says.
 
-- "Expression" becomes "utterance sample". It is what is used at the NLU level to train a skill action so Leon understands what needs to be done.
+- "Expression" becomes "utterance sample". It is what is used at the NLU (*Natural Language Understanding*) level to train a skill action so Leon understands what needs to be done.
 
 #### New Structure
 
@@ -98,11 +98,11 @@ There are many scenarios where we want a skill hold some data and be able to con
 
 ![Contexts](contexts.png)
 
-This is the most important improvement for the Leon's NLP. Introducing contexts makes Leon smarter and allow to do slot filling, prioritize classifications, build skills for natural conversations, etc. Contexts are the foundation of many aspects of Leon NLP capabilities.
+This is the most important improvement for the Leon's NLP. Introducing contexts makes Leon smarter and allows to do slot filling, prioritize classifications, build skills with natural conversations, etc. Contexts are the foundation of many aspects of Leon NLP capabilities.
 
 A context is identified by a domain + a skill name. Each context holds several kind of data that come along conversations such as entities, slots, etc.
 
-For us humans, It's very natural to understand contexts. If you speak about a blue color out of context, then what does it mean? Is it the color of a t-shirt, a car, a light? And why are we speaking about the blue color? Well, we know that thanks to contexts.
+For us humans, It's very natural to understand contexts. If you speak about a blue color out of context, then what does it mean? Is it the color of a t-shirt, a car, a light? And why are we even speaking about the blue color? Well, we know that thanks to contexts.
 
 As you can see on the image above, "Remove it" is a pretty common thing that can be used in many other skills. But thanks to contexts, Leon knows it actually means to remove the todo from the list and not anything else. So utterance samples can be very general and not too specific and Leon will still understand according to contexts.
 
@@ -116,7 +116,7 @@ I also implemented a contexts queue so in the future we can build deeper meaning
 
 #### Action Loop
 
-The action loop is a concept to keep Leon triggering the same skill action until the logic of the skill breaks the loop based on new utterances. In the skill configuration, you define a loop by telling Leon what item he needs to expect. An item can be a entity or a resolver (keep reading to understand what resolvers are). Leon will keep triggering the same skill action until it breaks.
+The action loop is a concept to keep Leon triggering the same skill action until the logic of the skill breaks the loop according to new utterances content. In the skill configuration, you define a loop by telling Leon what item he needs to expect. An item can be a entity or a resolver (keep reading to understand what resolvers are). Leon will keep triggering the same skill action until it breaks.
 
 A loop can break if the action explicitly stops it from the code. Or if the utterance does not contain the expected item, Leon will think you are changing topic and will break the loop by himself.
 
@@ -138,7 +138,7 @@ Let's say we have a Guess the Number skill where Leon picks up a number and let 
 }
 ```
 
-Meaning Leon will trigger the "guess" action on upcoming utterances until the loop breaks. In this example, the loop expects an entity type of number. When the action returns a `isInActionLoop` to `false`, then the loop will break, probably because the Leon owner guessed the number.
+Meaning Leon will trigger the `guess` action on upcoming utterances until the loop breaks. In this example, the loop expects an entity type of number. When the action returns a `isInActionLoop` to `false`, then the loop will break, probably because the Leon owner guessed the number.
 
 #### Next Action
 
@@ -186,7 +186,7 @@ Okay, at least let's go for a simple example. Still with our Guess the Number sk
 2. Once the number is found, then Leon will be disposed to trigger the `replay` action.
 3. This `replay` action expects the `affirmation_denial` global resolver, so basically, Leon expects a `yes` or `no` answer (again, I will explain resolvers later in this blog post).
 
-As you can see here only the first action requires utterance samples. Then everything comes up with a flow.
+As you can see here only the first action requires utterance samples. Then everything comes up with the flow.
 
 ### Slot Filling
 
@@ -194,17 +194,37 @@ As you can see here only the first action requires utterance samples. Then every
 
 Depending on how skill developers wants to design their skill, they have the possibility to ask for more information before to get to the meat of the skill. In this way, Leon can gather these information to operate the skill in a complete manner.
 
+These information are called "slots". A slot expects a type of data called "item", and makes use of questions to let Leon owners knows what data they need to provide.
+
 On the image above, you can see for the Akinator skill, Leon asks what thematic you want to play with. Then according to the thematic, Leon's friend Akinator, will try to guess within the chosen thematic.
 
-Skill developers can use their imagination to design nice scenario with such features.
+Here is an example of how the thematic slot configuration could look like:
+
+```json
+"slots": [
+  {
+    "name": "thematic",
+    "item": {
+      "type": "entity",
+      "name": "thematic"
+    },
+    "questions": [
+      "What thematic would you like to play with?",
+      "What thematic do you choose?"
+    ]
+  }
+]
+```
+
+Skill developers can use their imagination to design nice scenarios with such features.
 
 ### A More Powerful NER
 
 ![A more powerful NER](more-powerful-ner.png)
 
-Still in the purpose of improving the NLP of Leon, NER (*Natural Entity Recognition*) plays a big part here. It is what helps Leon to identity/target specific information we provide such as a location, date, duration and so on...
+Still in the purpose of improving the NLP of Leon, NER (*Natural Entity Recognition*) plays a big part here. It is what helps Leon to identify/target specific information we provide such as a location, date, duration and so on...
 
-I worked in improving the NER by adding two new group of entities: global entities and spaCy entities. In this way Leon's NER contains a total of four groups:
+I worked in improving the NER by adding two new groups of entities: global entities and spaCy entities. In this way Leon's NER contains a total of four groups:
 
 #### Built-In Entities
 
@@ -276,7 +296,7 @@ For example, the Good Bye skill simply uses the skill configuration without any 
 
 Leon will automatically pick up an answer from this action when the Good Bye skill is triggered. It is also possible to create dialogs with this type. Let's take an example with a Color skill.
 
-Let's say we have 3 actions within the Color skills:
+Let's say we have 3 actions within the Color skill:
 
 - favorite_color: Leon tells about his favorite color.
 - why: Leon justifies why it is his favorite color.
@@ -387,7 +407,7 @@ Also, have you noticed the new variables feature here? You can now specify some 
 
 After Leon tells you about his favorite color, you can ask why he likes this color. Then as there is a "why" action within this skill, thanks to the context, Leon will understand that you are asking why he likes these colors and not let's say... Why he likes to eat chocolate... Once again, context here is really helpful. It gives the possibility to create such dialogs.
 
-In our color global entity file, you can see that we can hold some custom data. In our case the hexadecimal code for each colors. In that way, you can reuse these data within your skill configuration by using the following format: `{{ color.hexa }}`. This very handy and you can think of any kind of data here. Remember, imagination is the only limit!
+In our color global entity file, you can see that we can hold some custom data. In our case the hexadecimal code for each color. In that way, you can reuse these data within your skill configuration by using the following format: `{{ color.hexa }}`. This very handy and you can think of any kind of data here. Remember, imagination is the only limit!
 
 #### Logic Type
 
@@ -409,7 +429,7 @@ Suggestions are a simple way to suggest Leon owners what can be answered next. O
 
 On a skill with a dialog type, if suggestions are added in a slot, then they will show up automatically.
 
-For logic skills type, suggestion can be added at the action and slot level, but they have to be triggered from the action code via the "showNextActionSuggestions" (show suggestions of the next action) or "showSuggestions" (show suggestions of the current action) options.
+For logic skills type, suggestion can be added at the action and slot level, but they have to be triggered from the action code via the `showNextActionSuggestions` (show suggestions of the next action) or `showSuggestions` (show suggestions of the current action) options.
 
 Don't worry, a better explanation will come up with the documentation before the official release. Just know that suggestions exist.
 
@@ -431,7 +451,7 @@ There are two types of resolvers. Let's take a look.
 
 Global resolvers are the ones used for common purposes so they can easily be reused by skills. They are defined at a high level in the Leon's structure.
 
-For example, the purpose of the "affirmation_denial" resolver is to affirm or deny something, just a "yes" or "no" question. Like "Would you try again?", such case is very common, therefore this global resolver exists and can easily be used by skills.
+For example, the purpose of the `affirmation_denial` resolver is to affirm or deny something, just a `yes` or `no` question. Like "Would you try again?", such case is very common, therefore this global resolver exists and can easily be used by skills.
 
 It looks like this (it is longer in reality):
 
@@ -473,7 +493,7 @@ In the skill configuration we can set such resolver at the skill action level vi
 }
 ```
 
-Global resolvers have their own NLP model to not have any conflict with the main NLP model which contains skills intents. This type of resolvers is classified within a special NLP domain called "system" so Leon can recognize they are a special case somehow.
+Global resolvers have their own NLP model to not have any conflict with the main NLP model which contains skills intents. This type of resolvers is classified within a special NLP domain called `system` so Leon can recognize they are a special case somehow.
 
 #### Skill Resolvers
 
@@ -483,13 +503,13 @@ Skill resolvers are the same as global resolvers except that they are located at
 
 These resolvers are specific to skills and cannot be reused by other skills.
 
-For example, the MBTI skill which provides a quiz to know your personality type relies on a skill resolver. This resolver contains forty intents. Each intent represents a choice of the quiz and is identified by a value such as "1_b" for "the first question, choice B".
+For example, the MBTI skill which provides a quiz to know your personality type relies on a skill resolver. This resolver contains forty intents. Each intent represents a choice of the quiz and is identified by a value such as `1_b` for "the first question, choice B".
 
-So the "1_b" value can be manipulated from the skill action.
+So the `1_b` value can be manipulated from the skill action.
 
 ### Cartesian Training Samples
 
-To train the main NLP model, we need to provide utterance samples for each action of all skills. However, sometimes it can be redundant to have some sort of repetitions in our utterance samples.
+To train the main NLP model, we need to provide utterance samples for skill actions. However, sometimes it can be redundant to have some sort of repetitions in our utterance samples.
 
 Let's take an example. To train the "add todos" action of our Todo List skill, we can have the following samples:
 
@@ -532,7 +552,7 @@ These new skills are: Akinator, Rock Paper Scissors, Guess the Number, Color, MB
 
 ### What's Next?
 
-With such NLP foundations, we will be able to imagine and realize an infinity of skills. Such expendable architecture is one of the main strength of Leon since day one.
+Alright, these things are introduced earlier are basically the major improvements. With such NLP foundations, we will be able to imagine and realize an infinity of skills. Such expendable architecture is one of the main strength of Leon since day one.
 
 New core features still need to see the light of day to have a decent personal assistant.
 
@@ -579,7 +599,7 @@ OR a simple shortcut on the client (web app, mobile, etc.)
 
 Then this will open a mini app in full screen with its own UI. The UI will still follow specific design guidelines exposed by SDKs so it will be consistent across all mini apps. Then we could browse and see charts of our expenses per category, etc. like on a classic app. But this app will be very easy to build as it extends from the core and SDKs of Leon! Skill developers just need to focus on the business logic, nothing more.
 
-But we may think of why not simply use existing applications out there? Well, I'd say that one of the ultimate purpose of Leon is to centralize everything into one place. By "everything" I mostly mean our data. Doing so will also help to create very interesting scenarios among skills and also preserve our privacy. Use your imagination. It may be a long road, but we have to go through this.
+But we may think of why not simply use existing applications out there? Well, I'd say that one of the ultimate purpose of Leon is to centralize everything at one place. By "everything" I mostly mean our data. Doing so will also help to create very interesting scenarios among skills and also preserve our privacy. Use your imagination. It may be a long road, but we have to go through this.
 
 The UI will use the skill memory to fetch/push data. And the same data can be consumed by actions of the skill. It's up to the skill developer to expose these data over the NLU entry.
 
@@ -593,7 +613,7 @@ I started to brainstorm on [this roadmap card](https://trello.com/c/SMCjN5GP/425
 
 This one is tricky in my opinion. We already have several people who are willing to contribute to support more languages, which is awesome.
 
-But maybe some skills will not support some languages. Or maybe we need to define ahead what languages have to be supported to consider a skill completed. The thing is that to support new languages it's not only about translating utterance samples and answers. It also needs to review and define the whole configuration of a skill, especially to spot some specific custom entities in an utterance.
+But maybe some skills will not support some languages. Or maybe we need to define ahead what languages have to be supported to consider a skill as completed. The thing is that to support new languages it's not only about translating utterance samples and answers. It also needs to review and define the whole configuration of a skill, especially to spot some specific custom entities in an utterance.
 
 Maybe some tooling will need to be made to help with that. Like some offline auto translation and so on. Let's see. But yeah, this part is very important too.
 
