@@ -1,6 +1,6 @@
 ---
 title: A Better NLP and Future - 1.0.0-beta.7
-date: 2022-08-15
+date: 2022-08-21
 author: Louis Grenard
 description: Huge changes are coming up on Leon, especially the new NLP capabilities. Let's dive together about what are they and why.
 ---
@@ -96,19 +96,15 @@ There are many scenarios where we want a skill hold some data and be able to con
 
 ### Context Switching
 
-.....................TODO: image
-
-Create image of how it works under the hood ... Small timeline showing classifications prioritization with newly set context and hold entities, so can omit required entities
-
-
-
-
+![Contexts](contexts.png)
 
 This is the most important improvement for the Leon's NLP. Introducing contexts makes Leon smarter and allow to do slot filling, prioritize classifications, build skills for natural conversations, etc. Contexts are the foundation of many aspects of Leon NLP capabilities.
 
 A context is identified by a domain + a skill name. Each context holds several kind of data that come along conversations such as entities, slots, etc.
 
-For us humans, It's very natural to understand contexts. If you speak about a blue color out of context, then what does it mean? Is it the color of a t-shirt, a car, a light? And why are we suddenly speaking about the blue color? Well, we know that thanks to contexts.
+For us humans, It's very natural to understand contexts. If you speak about a blue color out of context, then what does it mean? Is it the color of a t-shirt, a car, a light? And why are we speaking about the blue color? Well, we know that thanks to contexts.
+
+As you can see on the image above, "Remove it" is a pretty common thing that can be used in many other skills. But thanks to contexts, Leon knows it actually means to remove the todo from the list and not anything else. So utterance samples can be very general and not too specific and Leon will still understand according to contexts.
 
 Shortly speaking, for Leon, when a skill action is triggered, he will set the current context based on the domain of the skill and the name of the skill.
 
@@ -118,23 +114,7 @@ This can allow new capabilities.
 
 I also implemented a contexts queue so in the future we can build deeper meaningful features based on previous contexts. Imagine what it would be possible to do if skills can access this contexts queue...
 
-
-
-......................TODO:
-
-Classification prioritization belonging to the same domain first. It helps with 2 (or 4?) things:
-
-Add bread to the shopping list; Actually, remove it
-
-As you can see on the image above, "Remove it" is a pretty common thing that can be used in many other skills. But thanks to contexts, Leon knows it actually means to remove the todo from the list and not something else. So utterance samples can be very general and not too specific and Leon will still understand according to contexts.
-
-So contexts also help to reduce conflicts of executing skill actions that belong to other domains.
-
-
-
-
-
-
+#### Next Action
 
 "next_action" is useful when a skill needs to follow a specific order of actions. It will help Leon to foresee and prepare for what's coming next. I will not go into details here as I don't think it is very relevant. Just understand that it helps to connect actions in a specific order to feed the context with data. Like you are creating a conversation flow. Okay, at least let's go for a simple example:
 
