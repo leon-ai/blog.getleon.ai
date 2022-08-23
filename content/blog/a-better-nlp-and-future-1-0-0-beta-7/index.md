@@ -1,6 +1,6 @@
 ---
-title: A Better NLP and Future - 1.0.0-beta.7
-date: 2022-08-21
+title: A Much Better NLP and Future - 1.0.0-beta.7
+date: 2022-08-24
 author: Louis Grenard
 description: Huge changes are coming up on Leon, especially the new NLP capabilities. Let's dive together about what are they and why.
 ---
