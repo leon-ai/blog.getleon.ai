@@ -59,9 +59,10 @@ const BlogPostTemplate = ({ data, location }) => {
             <img src="/images/newsletter.png" width={56} alt="Newsletter" />
           </div>
           <div className="newsletter-form-container">
-            <form action="https://www.getrevue.co/profile/leon/add_subscriber" method="post" target="_blank">
-              <input type="email" required spellCheck="false" placeholder="john.doe@example.com" name="member[email]" />
-              <button type="submit" name="member[subscribe]">Stay updated</button>
+            <form action="https://newsletter.getleon.ai/subscription/form" method="post" target="_blank">
+              <input type="email" required spellCheck="false" placeholder="john.doe@example.com" name="email" />
+              <input type="hidden" required name="l" value="1908b2a9-155b-40b8-ab99-569a9463e7bd" />
+              <button type="submit">Stay updated</button>
             </form>
           </div>
         </div>
