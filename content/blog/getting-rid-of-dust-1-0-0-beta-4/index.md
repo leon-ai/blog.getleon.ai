@@ -87,7 +87,7 @@ Usually it is done through [this file](https://github.com/mapbox/node-pre-gyp/bl
 
 Despite the lack of maintainability, I decided to **create a [fork of Snowboy](https://github.com/leon-ai/snowboy)** and maintain it independently. On this fork, **Snowboy works with Node.js >= 14** as specified in [this issue comment](https://github.com/Kitt-AI/snowboy/pull/537#issuecomment-797881134).
 
-Please keep in mind that is a **temporary solution** as this part of Leon should be improved in the future. If you have any suggestion for a hotword detection alternative or wish to build one, don't hesitate to **shoot me an email at <louis.grenard@gmail.com>**.
+Please keep in mind that is a **temporary solution** as this part of Leon should be improved in the future. If you have any suggestion for a hotword detection alternative or wish to build one, don't hesitate to **shoot me an email at <louis@getleon.ai>**.
 
 I found some alternatives such as [Porcupine](https://github.com/Picovoice/porcupine) from [Picovoice](https://picovoice.ai/) that works pretty well. But at the moment I'm writing this, their tooling does not allow to have short hotword like `Leon`. Which is in fact a best practice, but it means we'd need to comply such limitations.
 
