@@ -9,7 +9,7 @@ const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || 'Title'
   const { previous, next } = data
-  const authorImg = `/images/authors/${post.frontmatter.author.toLowerCase().split(' ').join('_')}.png`
+  const authorImg = `/images/authors/${post.frontmatter.author.toLowerCase().split(' ').join('_')}.jpeg`
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -29,7 +29,7 @@ const BlogPostTemplate = ({ data, location }) => {
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p className="post-data">
-            <img src={authorImg} alt={post.frontmatter.author} /> {post.frontmatter.author} / {post.frontmatter.date}
+            <img src={authorImg} alt={post.frontmatter.author} /> {post.frontmatter.author} • {post.frontmatter.date}
           </p>
         </header>
         <hr />
@@ -68,7 +68,7 @@ const BlogPostTemplate = ({ data, location }) => {
         </div>
         <br />
         <p>Cheers <span role="img" aria-label="Cocktail">🍹</span>,</p>
-        <p><em>{post.frontmatter.author.split(' ')[0]}</em>.</p>
+        <p><em>{post.frontmatter.author.split(' ')[0]}</em></p>
       </article>
       <nav className="blog-post-nav">
         <ul

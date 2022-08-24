@@ -39,7 +39,7 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 630
+              maxWidth: 750
             }
           },
           {
@@ -74,6 +74,7 @@ module.exports = {
                 title
                 description
                 siteUrl
+                site_url: siteUrl
               }
             }
           }
@@ -110,7 +111,8 @@ module.exports = {
                 }
               }
             `,
-            output: '/rss.xml'
+            output: '/rss.xml',
+            title: 'Leon Blog RSS Feed'
           }
         ]
       }
