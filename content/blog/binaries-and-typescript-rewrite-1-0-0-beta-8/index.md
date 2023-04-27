@@ -1,6 +1,6 @@
 ---
 title: Binaries and TypeScript Rewrite - 1.0.0-beta.8
-date: 2023-04-19
+date: 2023-04-27
 author: Louis Grenard
 description: Introducing the beta 8 of Leon. It was a long-development release but definitely worth it.
 ---
@@ -31,7 +31,7 @@ Overall, this improvement simplifies the deployment and installation process, ma
 
 ### TypeScript Rewrite and New Architecture
 
-TODO: CODEBASE SCHEMA WITH IMPORTANT NODES
+![New codebase](new-codebase.png)
 
 As Leon's codebase continues to grow, it's become clear that we need a more robust and maintainable approach to development. When I first started building Leon back in late 2017, I was hesitant to use TypeScript, as I thought it might discourage some potential contributors who weren't familiar with the language. However, with the growing popularity of TypeScript, now is the perfect time to make the switch.
 
