@@ -1,8 +1,8 @@
 ---
 title: Binaries and TypeScript Rewrite - 1.0.0-beta.8
-date: 2023-04-27
+date: 2023-04-29
 author: Louis Grenard
-description: Introducing the beta 8 of Leon. It was a long-development release but definitely worth it.
+description: Introducing the beta 8 of Leon. It was a long-development release but definitely worth it!
 ---
 
 👋 Hello everyone, it's been a long time in the making, but I'm excited to announce the release of Leon beta 8! This version includes a range of new features and improvements that have been designed to enhance the performance, reliability, and usability of the project. In this blog post, I'll highlight the key features of this release and explain how they can benefit both you and the project as a whole.
@@ -29,7 +29,7 @@ I'd like to express my gratitude to [MacStadium](https://www.macstadium.com/), 
 
 Overall, this improvement simplifies the deployment and installation process, making Leon more portable and compatible with different platforms and environments.
 
-### TypeScript Rewrite and New Architecture
+### TypeScript Rewrite and New Codebase
 
 ![New codebase](new-codebase.png?v=1)
 
