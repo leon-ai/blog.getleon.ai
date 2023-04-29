@@ -31,7 +31,7 @@ Overall, this improvement simplifies the deployment and installation process, ma
 
 ### TypeScript Rewrite and New Architecture
 
-![New codebase](new-codebase.png)
+![New codebase](new-codebase.png?v=1)
 
 As Leon's codebase continues to grow, it's become clear that we need a more robust and maintainable approach to development. When I first started building Leon back in late 2017, I was hesitant to use TypeScript, as I thought it might discourage some potential contributors who weren't familiar with the language. However, with the growing popularity of TypeScript, now is the perfect time to make the switch.
 
@@ -86,7 +86,7 @@ Finally, we want to invite you to [join us on Discord](https://discord.gg/MNQqqK
 
 ## What's Next?
 
-We have some exciting developments on the horizon for Leon! Over the next few weeks, our focus will be on developing the Python SDK and creating a JavaScript bridge and TypeScript SDK, which will allow us to create new skills using JavaScript.
+We have some exciting developments on the horizon for Leon! Over the next few weeks, our focus will be on developing the Python SDK and creating the Node.js bridge and TypeScript SDK, which will allow us to create new skills using JavaScript.
 
 If you're curious about our upcoming major milestones, you can check out [this link for more information](https://blog.getleon.ai/a-much-better-nlp-and-future-1-0-0-beta-7/#2-python-sdk). And also the [detailed roadmap](http://roadmap.getleon.ai/).
 
