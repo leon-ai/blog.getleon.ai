@@ -1,6 +1,6 @@
 ---
 title: Binaries and TypeScript Rewrite - 1.0.0-beta.8
-date: 2023-04-29
+date: 2023-04-30
 author: Louis Grenard
 description: Introducing the beta 8 of Leon. It was a long-development release but definitely worth it!
 ---
