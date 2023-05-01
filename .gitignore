@@ -7,3 +7,4 @@ Thumbs.db
 *.log
 .deploy*/
 .idea
+.obsidian
