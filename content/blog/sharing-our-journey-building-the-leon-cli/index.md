@@ -5,7 +5,7 @@ author: Louis Grenard
 description: A developers story about how we've built the Leon CLI, the challenges we faced, how did we resolve them and more!
 ---
 
-👋 Hey all, the first release of the [Leon CLI](https://github.com/leon-ai/leon-cli) has landed a few days ago. I'd like to let [Divlo](https://github.com/Divlo) and [Arthur](https://github.com/ArthurDelamare) share their experience building it, the problems they faced, how they solved them and whatever they would like to share with you!
+👋 Hey all, the first release of the [Leon CLI](https://github.com/leon-ai/leon-cli) has landed a few days ago. I'd like to let [Théo](https://github.com/theoludwig) and [Arthur](https://github.com/ArthurDelamare) share their experience building it, the problems they faced, how they solved them and whatever they would like to share with you!
 
 If you are not familiar with Leon yet, Leon is an open-source personal assistant. He is based on Node.js for the core, and uses Python for his modules (skills). Therefore, several requirements need to be installed to start to fully enjoy the experience.
 
@@ -13,7 +13,7 @@ Installing these requirements can be a hassle, origins of several issues you rep
 
 ### How the Project is Organized
 
-The two companions (us, [Divlo](https://github.com/Divlo) & [Arthur](https://github.com/ArthurDelamare)) started working together with common goals:
+The two companions (us, [Théo](https://github.com/theoludwig) & [Arthur](https://github.com/ArthurDelamare)) started working together with common goals:
 
 - Make the installation easy
 - Cross-platform
@@ -58,12 +58,12 @@ We offer two ways to install Leon:
 
 Two options and two brains, a perfect match! Naturally, we divided the work:
 
-- Divlo started on the Docker install.
+- Théo started on the Docker install.
 - And Arthur the classic one.
 
 Let's dive into some experience feedback:
 
-**Divlo**: The command `leon create birth` was the hardest command to get it working as it's completely cross-platform, so we needed to create Virtual Machines to test on multiple OSes. The Docker installation was a little bit easier, as Docker does the "heavy lifting" for us.
+**Théo**: The command `leon create birth` was the hardest command to get it working as it's completely cross-platform, so we needed to create Virtual Machines to test on multiple OSes. The Docker installation was a little bit easier, as Docker does the "heavy lifting" for us.
 We both learned a lot building this first version of the CLI, but it's only the beginning and we want to make it more and more useful to be the companion for your Leon journey.
 
 **Arthur**: Leon's CLI is a proof that nothing beats a challenge to learn and exceed your skills. I probably lost some hair managing the cross-platform side... So, I hope the community will appreciate my dedication.

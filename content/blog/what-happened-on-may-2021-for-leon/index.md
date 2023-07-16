@@ -9,7 +9,7 @@ description: Let's dive into what happened on the project on May 2021. We have n
 
 Usually most of the work related to Leon happens on the [main repository](https://github.com/leon-ai/leon). However, there is a beginning of an ecosystem on Leon, so there is also work happening outside of this repository.
 
-We are mostly focusing on **the rebranding** and thanks to [Divlo](https://github.com/Divlo) and [Arthur](https://github.com/ArthurDelamare) we can also focus on the **<abbr title="Command-Line Interface">CLI</abbr>** in parallel which they'll tell you more in this blog post.
+We are mostly focusing on **the rebranding** and thanks to [Théo](https://github.com/theoludwig) and [Arthur](https://github.com/ArthurDelamare) we can also focus on the **<abbr title="Command-Line Interface">CLI</abbr>** in parallel which they'll tell you more in this blog post.
 
 ## The Rebranding
 
@@ -68,11 +68,11 @@ In the future, this CLI will become an even more important piece of the Leon eco
 
 The first version of the CLI focus exclusively on the setup of Leon. And it's moving forward well!
 
-I let Divlo and Arthur tell us more about it as they are the heroes working on this essential piece.
+I let Théo and Arthur tell us more about it as they are the heroes working on this essential piece.
 
 ### What Has Been Done
 
-👋 Hey, I'm [Divlo](https://github.com/Divlo), a Full Stack developer who loves open source.
+👋 Hey, I'm [Théo](https://github.com/theoludwig), a Full Stack developer who loves open source.
 
 We're currently working hard to achieve the goal of **making the installation of Leon much easier** for newcomers, we prefer to prepare the basic features first before to **open source the first version**.
 

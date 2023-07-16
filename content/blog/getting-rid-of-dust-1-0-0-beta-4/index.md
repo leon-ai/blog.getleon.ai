@@ -141,7 +141,7 @@ Most of the time we hear about [Express.js](https://expressjs.com/) because it i
 
 I agree with most of what is explained in [this article](https://dev.to/romainlanz/why-you-should-drop-expressjs-in-2021-711).
 
-Thanks to the great job from [Divlo](https://github.com/Divlo), the migration is shipped with this new release. 
+Thanks to the great job from [Théo](https://github.com/theoludwig), the migration is shipped with this new release.
 
 ### Try Leon with a Single-Click
 
@@ -153,7 +153,7 @@ It will automatically setup an environment with all the requirements and run an 
 
 You can [try it here](https://gitpod.io/#https://github.com/leon-ai/leon).
 
-Again, kudos to [Divlo](https://github.com/Divlo) for suggesting and making this happens 👏
+Again, kudos to [Théo](https://github.com/theoludwig) for suggesting and making this happens 👏
 
 ### Force Minimum Node.js Version
 
@@ -201,5 +201,5 @@ In a shorter term, here is what we can expect to see:
 
 - A **blog post** explaining my **Coming Back** on the project, the **WHY** and things I mentioned earlier. It's important for me to **share you my thoughts and this journey**.
 - A **full rebranding** with a new visual identity of the project that **reflects** more the **values and vision of Leon**.
-- **The CLI** so it improves the onboarding experience by removing the hassle of the requirements, centralizing commands and more... Kudos to [Arthur](https://github.com/ArthurDelamare) and [Divlo](https://github.com/Divlo) who are working on it! 👏
+- **The CLI** so it improves the onboarding experience by removing the hassle of the requirements, centralizing commands and more... Kudos to [Arthur](https://github.com/ArthurDelamare) and [Théo](https://github.com/theoludwig) who are working on it! 👏
 - Take a look at the **[roadmap](http://roadmap.getleon.ai/)** to see more.
