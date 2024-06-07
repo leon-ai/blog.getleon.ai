@@ -27,7 +27,7 @@
   "dependencies": {
     "@fontsource/jetbrains-mono": "^4.5.12",
     "@fontsource/source-sans-pro": "^4.5.11",
-    "gatsby": "^4.25.4",
+    "gatsby": "^4.25.5",
     "gatsby-plugin-canonical-urls": "^4.25.0",
     "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-feed": "^4.25.0",
