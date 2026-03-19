@@ -11,6 +11,17 @@ const BlogPostTemplate = ({ data, location }) => {
   const { previous, next } = data
   const authorImg = `/images/authors/${post.frontmatter.author.toLowerCase().split(' ').join('_')}.jpeg`
 
+  const handleNewsletterSubmit = (event) => {
+    event.preventDefault()
+
+    const form = event.currentTarget
+    const formData = new FormData(form)
+    let email = formData.get('email')
+    email = encodeURIComponent(email)
+
+    window.open(`https://leonai.substack.com/subscribe?freeSignupEmail=${email}`, '_blank')
+  }
+
   return (
     <Layout location={location} title={siteTitle}>
       <Seo
@@ -59,9 +70,8 @@ const BlogPostTemplate = ({ data, location }) => {
             <img src="/images/newsletter.png" width={56} alt="Newsletter" />
           </div>
           <div className="newsletter-form-container">
-            <form action="https://newsletter.getleon.ai/subscription/form" method="post" target="_blank">
+            <form onSubmit={handleNewsletterSubmit}>
               <input type="email" required spellCheck="false" placeholder="john.doe@example.com" name="email" />
-              <input type="hidden" required name="l" value="1908b2a9-155b-40b8-ab99-569a9463e7bd" />
               <button type="submit">Stay updated</button>
             </form>
           </div>
